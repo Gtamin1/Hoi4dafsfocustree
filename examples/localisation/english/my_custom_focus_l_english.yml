@@ -1,0 +1,11 @@
+l_english:
+ MYC_political_effort:0 "Political Effort"
+ MYC_political_effort_desc:0 "Lay the political groundwork that the rest of our agenda depends on."
+ MYC_industrial_effort:0 "Industrial Effort"
+ MYC_industrial_effort_desc:0 "Direct the nation's resources toward expanding our productive base."
+ MYC_military_effort:0 "Military Effort"
+ MYC_military_effort_desc:0 "Sharpen the army's doctrine and pour experience into the officer corps."
+ MYC_research_effort:0 "Research Effort"
+ MYC_research_effort_desc:0 "Open a new line of research and bring more scientists into government work."
+ MYC_war_plan:0 "Eastern War Plan"
+ MYC_war_plan_desc:0 "Finalise the operational plan for an invasion of our eastern neighbour."

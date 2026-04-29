@@ -1,0 +1,104 @@
+focus_tree = {
+	id = my_custom_tree
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = GER
+		}
+	}
+	default = no
+	continuous_focus_position = { x = 50 y = 1100 }
+	initial_show_position = { focus = MYC_political_effort }
+
+	focus = {
+		id = MYC_political_effort
+		icon = GFX_goal_generic_demand_territory
+		x = 4
+		y = 0
+		cost = 10
+		ai_will_do = { factor = 5 }
+		available = { has_war = no }
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+
+	focus = {
+		id = MYC_industrial_effort
+		icon = GFX_goal_generic_construct_civ_factory
+		relative_position_id = MYC_political_effort
+		x = -2
+		y = 1
+		cost = 10
+		prerequisite = { focus = MYC_political_effort }
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = industry_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
+	}
+
+	focus = {
+		id = MYC_military_effort
+		icon = GFX_goal_generic_army_doctrines
+		relative_position_id = MYC_political_effort
+		x = 2
+		y = 1
+		cost = 10
+		prerequisite = { focus = MYC_political_effort }
+		mutually_exclusive = { focus = MYC_industrial_effort }
+		ai_will_do = { factor = 5 }
+		completion_reward = {
+			army_experience = 25
+			add_tech_bonus = {
+				name = land_doctrine_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = MYC_research_effort
+		icon = GFX_goal_generic_scientific_exchange
+		relative_position_id = MYC_political_effort
+		x = 0
+		y = 2
+		cost = 10
+		prerequisite = { focus = MYC_industrial_effort focus = MYC_military_effort }
+		available = { has_political_power > 50 }
+		ai_will_do = { factor = 4 }
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = MYC_war_plan
+		icon = GFX_goal_generic_position_armies
+		relative_position_id = MYC_research_effort
+		x = 0
+		y = 1
+		cost = 10
+		prerequisite = { focus = MYC_research_effort }
+		available = { date > 1937.1.1 }
+		will_lead_to_war_with = POL
+		ai_will_do = {
+			factor = 2
+			modifier = { factor = 0 has_war = yes }
+		}
+		completion_reward = {
+			add_political_power = 50
+			create_wargoal = {
+				type = annex_everything
+				target = POL
+			}
+		}
+	}
+}
