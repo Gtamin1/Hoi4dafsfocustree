@@ -1,0 +1,47 @@
+﻿l_english:
+
+ ##########################################
+ # Focus tree
+ ##########################################
+
+ GER_open_political_sphere:0 "Open Political Sphere"
+ GER_open_political_sphere_desc:0 "The old order can no longer keep Germany's political life sealed shut. To prepare the nation for a new direction, the arena of debate must be opened, entrenched voices must lose their monopoly, and new movements must be allowed to compete for the future of the country. Once the political sphere is opened, unexpected challengers and ambitious new leaders will be able to step into the light."
+
+ GER_a_new_hero:0 "A New Hero"
+ GER_a_new_hero_desc:0 "In a crowded bar, a fiery 21-year-old named Eric Zemmour delivers a speech that electrifies the room. Sharp, confident, and openly contemptuous of stale bombast, he presents himself as a more intelligent and disciplined alternative to Hitler. His supporters repeat his mocking lines with delight \"Germany needs a future, not a tantrum,\" \"less moustache mythology, more national recovery,\" and \"one speech, zero screaming fits\" until the tavern itself feels like the birthplace of something new. By the end of the night, applause has turned into momentum, and that momentum has found a name: RECONQUETE."
+
+ GER_epic_zemmour_anti_adolf_moment:0 "Epic Zemmour Anti Adolf Moment"
+ GER_epic_zemmour_anti_adolf_moment_desc:0 "Before a stunned audience at a public meeting, Eric Zemmour openly mocks Adolf Hitler, pointing directly at him and denouncing his theatrics, cult of personality, and destructive political style. What begins as a shocking interruption quickly becomes a defining spectacle: Zemmour ridicules empty shouting, attacks Hitler's image as little more than stagecraft, and presents RECONQUETE as the bold alternative. The scene enrages fascist loyalists, but word of the humiliation spreads rapidly and gives enormous momentum to the anti-Hitler current."
+
+ ##########################################
+ # Ideas / modifiers
+ ##########################################
+
+ GER_reconquete_movement:0 "Rise of RECONQUETE"
+ GER_reconquete_movement_desc:0 "The young movement around Eric Zemmour is steadily winning converts. Each day a few more Germans abandon the old ideologies and rally to RECONQUETE."
+
+ GER_zemmour_humiliation:0 "Hitler Humiliated"
+ GER_zemmour_humiliation_desc:0 "Eric Zemmour's public ridicule of Adolf Hitler has shattered the aura around the Fuhrer. Fascist support is bleeding away while RECONQUETE surges to fill the vacuum."
+
+ ##########################################
+ # Party / leader
+ ##########################################
+
+ GER_reconquete_party:0 "RECONQUETE"
+ GER_reconquete_party_long:0 "RECONQUETE Movement of National Renewal"
+
+ GER_eric_zemmour:0 "Eric Zemmour"
+
+ ##########################################
+ # World news events
+ ##########################################
+
+ ger_news.1.t:0 "A New Voice in Germany"
+ ger_news.1.d:0 "Reports from Germany speak of an unexpected political sensation. In a crowded bar, a 21-year-old speaker named Eric Zemmour has drawn widespread attention after delivering a speech that many listeners found more compelling than Hitler's usual theatrics. Mixing sharp mockery with promises of national renewal, the young agitator has inspired the birth of a new political movement now calling itself RECONQUETE."
+ ger_news.1.a:0 "A new voice from Germany."
+ ger_news.1.b:0 "An interesting development."
+
+ ger_news.2.t:0 "Zemmour Publicly Denounces Hitler"
+ ger_news.2.d:0 "Germany's political tensions have escalated dramatically after Eric Zemmour, the young leader of RECONQUETE, publicly mocked Adolf Hitler during a meeting and denounced him before a stunned audience. Witnesses describe the confrontation as both theatrical and politically explosive. While fascist supporters are furious, the incident has noticeably boosted Zemmour's standing among those now seeking an alternative path."
+ ger_news.2.a:0 "Hitler has been humiliated."
+ ger_news.2.b:0 "Astonishing scenes in Germany."
