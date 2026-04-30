@@ -1,5 +1,14 @@
 ###########################################################
 # Sprite registrations for the German rework expansion.
+#
+# The PNG files at the paths below are tiny 8x8 placeholder
+# images shipped with the mod so HOI4's async asset loader
+# never sees a missing texture (which crashes the game on the
+# first day tick via PHYSFS in a TBB worker thread).
+#
+# To use the real artwork, just overwrite each .png file at
+# its current path with your real image — no need to edit
+# this .gfx file.
 ###########################################################
 
 spriteTypes = {

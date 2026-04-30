@@ -1,0 +1,27 @@
+###########################################################
+# German rework — additional characters.
+#
+# Eric Zemmour is defined here as a plain character (no leader
+# role, no advisor role). The country_leader role is added at
+# runtime by the "A New Hero" focus via add_country_leader_role,
+# so until then Germany's politics screen and AI evaluation see
+# their normal vanilla state.
+#
+# Defining the country_leader role here at game start was
+# causing HOI4's parallel daily-tick systems (Conflict Risk, AI
+# leader caching) to crash on day 1 with an access violation
+# inside PHYSFS on a TBB worker thread.
+###########################################################
+
+characters = {
+
+	GER_eric_zemmour = {
+		name = "Eric Zemmour"
+		portraits = {
+			civilian = {
+				large = "GFX_Portrait_Eric_Zemmour"
+			}
+		}
+	}
+
+}

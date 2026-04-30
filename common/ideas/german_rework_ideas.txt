@@ -13,7 +13,7 @@ ideas = {
 		# Permanent idea granted by "A New Hero".
 		# Provides the constant +0.01/day RECONQUETE popularity gain.
 		GER_reconquete_movement = {
-			picture = generic_political_support
+			picture = generic_propaganda
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
@@ -25,7 +25,7 @@ ideas = {
 		# Temporary idea granted by "Epic Zemmour Anti Adolf Moment".
 		# Removed by ger_political.1 exactly 320 days after it is added.
 		GER_zemmour_humiliation = {
-			picture = generic_political_support
+			picture = generic_propaganda
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
