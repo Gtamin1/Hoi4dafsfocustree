@@ -1,0 +1,109 @@
+###########################################################
+# German Rework — replaces the vanilla Germany focus tree.
+#
+# This file lives at common/national_focus/germany.txt so that
+# it overrides the vanilla file of the same name. The new tree
+# below is the one shown to GER from now on.
+#
+# Branches implemented:
+#   - Political (GER_open_political_sphere -> GER_a_new_hero
+#                -> GER_epic_zemmour_anti_adolf_moment)
+#
+# Other branches (industry, military, diplomacy, war) are
+# intentionally left empty for now and can be slotted in by
+# adding more `focus = { ... }` entries to this same tree.
+###########################################################
+
+focus_tree = {
+	id = german_rework_tree
+	country = {
+		factor = 0
+		modifier = {
+			add = 20
+			tag = GER
+		}
+	}
+	default = no
+	continuous_focus_position = { x = 50 y = 2400 }
+	initial_show_position = { focus = GER_open_political_sphere }
+
+	#######################################
+	# POLITICAL BRANCH
+	#######################################
+
+	focus = {
+		id = GER_open_political_sphere
+		icon = GFX_goal_generic_demand_territory
+		x = 6
+		y = 0
+		cost = 5  # 5 * 7 = 35 days
+
+		ai_will_do = { factor = 10 }
+
+		completion_reward = {
+			add_political_power = 150
+		}
+	}
+
+	focus = {
+		id = GER_a_new_hero
+		icon = GFX_goal_generic_political_pressure
+		relative_position_id = GER_open_political_sphere
+		x = 0
+		y = 1
+		cost = 10  # 10 * 7 = 70 days
+
+		prerequisite = { focus = GER_open_political_sphere }
+
+		ai_will_do = { factor = 5 }
+
+		completion_reward = {
+			add_political_power = 50
+
+			# Found RECONQUETE: rename the neutrality slot, install
+			# Eric Zemmour as its leader, and grant a permanent
+			# daily neutrality (RECONQUETE) drift idea.
+			set_party_name = {
+				ideology = neutrality
+				long_name = GER_reconquete_party_long
+				name = GER_reconquete_party
+			}
+			promote_character = {
+				character = GER_eric_zemmour
+				ideology = despotism
+			}
+			add_ideas = GER_reconquete_movement
+			set_country_flag = GER_reconquete_founded
+
+			# World news for the founding of RECONQUETE.
+			news_event = { id = ger_news.1 days = 0 }
+		}
+	}
+
+	focus = {
+		id = GER_epic_zemmour_anti_adolf_moment
+		icon = GFX_goal_generic_propaganda
+		relative_position_id = GER_a_new_hero
+		x = 0
+		y = 1
+		cost = 7  # ~50 days (HOI4 cost is in 7-day weeks; 7 * 7 = 49 days)
+
+		prerequisite = { focus = GER_a_new_hero }
+
+		ai_will_do = { factor = 5 }
+
+		completion_reward = {
+			add_political_power = 50
+
+			# 320-day temporary idea that gives -0.1 daily fascism
+			# drift and +0.1 daily neutrality (RECONQUETE) drift.
+			add_ideas = GER_zemmour_humiliation
+			# Schedule its removal exactly 320 days later via a
+			# hidden country event.
+			country_event = { id = ger_political.1 days = 320 }
+
+			# World news for the public humiliation of Hitler.
+			news_event = { id = ger_news.2 days = 0 }
+		}
+	}
+}

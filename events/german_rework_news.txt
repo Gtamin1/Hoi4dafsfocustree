@@ -1,0 +1,50 @@
+###########################################################
+# German rework — world news events.
+#
+# These are real news_event entries (not country_event), so
+# they appear as global "world news" pop-ups for every
+# country, not just Germany. That is what HOI4 ships as the
+# closest equivalent to a "world news item".
+###########################################################
+
+add_namespace = ger_news
+
+# "A New Voice in Germany" — fired by GER_a_new_hero.
+news_event = {
+	id = ger_news.1
+	title = ger_news.1.t
+	desc = ger_news.1.d
+	picture = GFX_news_event_zemmour_introduce
+
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ger_news.1.a   # "A new voice from Germany."
+		trigger = { tag = GER }
+	}
+	option = {
+		name = ger_news.1.b   # "An interesting development."
+		trigger = { NOT = { tag = GER } }
+	}
+}
+
+# "Zemmour Publicly Denounces Hitler" — fired by GER_epic_zemmour_anti_adolf_moment.
+news_event = {
+	id = ger_news.2
+	title = ger_news.2.t
+	desc = ger_news.2.d
+	picture = GFX_news_event_zemmour_mocks
+
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ger_news.2.a   # "Hitler has been humiliated."
+		trigger = { tag = GER }
+	}
+	option = {
+		name = ger_news.2.b   # "Astonishing scenes in Germany."
+		trigger = { NOT = { tag = GER } }
+	}
+}

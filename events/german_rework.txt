@@ -1,0 +1,25 @@
+###########################################################
+# German rework — country events.
+#
+# ger_political.1 is the timer event that removes the
+# 320-day "Zemmour Humiliation" idea exactly when it
+# should expire.
+###########################################################
+
+add_namespace = ger_political
+
+# Hidden timer: removes the 320-day humiliation idea.
+country_event = {
+	id = ger_political.1
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { has_idea = GER_zemmour_humiliation }
+				remove_ideas = GER_zemmour_humiliation
+			}
+		}
+	}
+}
