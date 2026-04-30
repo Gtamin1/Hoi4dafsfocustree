@@ -23,10 +23,11 @@ focus_tree = {
 	country = {
 		factor = 0
 		modifier = {
-			# High enough to beat every vanilla and DLC German focus
-			# tree (Götterdämmerung, NSB, etc., which ship their own
-			# trees with their own picker weights).
-			add = 9999
+			# Vanilla picker weights for country-specific trees are
+			# usually 10–100. Match that range — extreme values like
+			# 9999 worked in some HOI4 versions but produced subtle
+			# instability in 1.18.
+			add = 100
 			tag = GER
 		}
 	}
@@ -75,19 +76,17 @@ focus_tree = {
 				long_name = GER_reconquete_party_long
 				name = GER_reconquete_party
 			}
-			# Add Zemmour as the new neutrality (RECONQUETE)
-			# country leader. Done here at runtime — NOT pre-baked
-			# into common/characters — because giving Germany an
-			# extra country_leader at game start crashes HOI4's
-			# parallel day-1 leader caching pass.
-			add_country_leader_role = {
-				character = GER_eric_zemmour
-				promote_leader = yes
-				country_leader = {
-					ideology = despotism
-					traits = { }
-					expire = "1965.1.1"
-				}
+			# Create Eric Zemmour as the new neutrality (RECONQUETE)
+			# country leader inline. Using the older create_country_leader
+			# instead of add_country_leader_role / a pre-defined
+			# character avoids the day-1 character iteration crash
+			# that happens when our character file is parsed.
+			create_country_leader = {
+				name = "Eric Zemmour"
+				picture = "GFX_Portrait_Eric_Zemmour"
+				expire = "1965.1.1"
+				ideology = despotism
+				traits = { }
 			}
 			add_ideas = GER_reconquete_movement
 			set_country_flag = GER_reconquete_founded
