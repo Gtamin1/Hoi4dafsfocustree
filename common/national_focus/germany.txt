@@ -75,13 +75,19 @@ focus_tree = {
 				long_name = GER_reconquete_party_long
 				name = GER_reconquete_party
 			}
-			# Promote Zemmour as the new neutrality (RECONQUETE)
-			# country leader. promote_character auto-recruits a
-			# defined character if it isn't already part of the
-			# country, so we don't need a separate recruit_character.
-			promote_character = {
+			# Add Zemmour as the new neutrality (RECONQUETE)
+			# country leader. Done here at runtime — NOT pre-baked
+			# into common/characters — because giving Germany an
+			# extra country_leader at game start crashes HOI4's
+			# parallel day-1 leader caching pass.
+			add_country_leader_role = {
 				character = GER_eric_zemmour
-				ideology = despotism
+				promote_leader = yes
+				country_leader = {
+					ideology = despotism
+					traits = { }
+					expire = "1965.1.1"
+				}
 			}
 			add_ideas = GER_reconquete_movement
 			set_country_flag = GER_reconquete_founded
