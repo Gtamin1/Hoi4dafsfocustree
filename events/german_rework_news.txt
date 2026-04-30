@@ -1,11 +1,11 @@
-###########################################################
-# German rework — world news events.
+###############################################################
+# German Rework Expansion — world news events
 #
-# These are real news_event entries (not country_event), so
-# they appear as global "world news" pop-ups for every
-# country, not just Germany. That is what HOI4 ships as the
-# closest equivalent to a "world news item".
-###########################################################
+# These are real news_event entries with major = yes, so they
+# pop up as global "world news" for every country, not just
+# Germany. That is HOI4's closest equivalent to the requested
+# "world news item".
+###############################################################
 
 add_namespace = ger_news
 

@@ -1,0 +1,123 @@
+###############################################################
+# German Rework Expansion — Political Branch
+#
+# IMPORTANT — why this file is NOT named germany.txt:
+# Naming our file the same as vanilla (common/national_focus/germany.txt)
+# would override vanilla wholesale and DELETE all vanilla German
+# focuses from memory. Other vanilla files reference those focuses by
+# id — bookmarks (the_gathering_storm.txt, blitzkrieg.txt), some
+# decisions, civil-war fallback scripts, etc. With those references
+# unresolvable, HOI4's day-1 background pass dereferences a null
+# pointer and crashes inside PHYSFS on a TBB worker thread.
+#
+# The supported pattern in HOI4 1.18 is to ship the new tree under
+# its own filename and its own unique tree id, then outweigh vanilla
+# (and DLC trees) in the country = { ... } picker. Vanilla focuses
+# remain defined in memory, bookmarks still resolve, our tree still
+# becomes the one Germany sees.
+###############################################################
+
+focus_tree = {
+	id = german_rework_focus
+
+	country = {
+		factor = 0
+		modifier = {
+			# Picks our tree for GER. Vanilla GER tree weight is 10,
+			# DLC trees (NSB / GD / WTT) sit in the 20-50 range.
+			# 200 wins comfortably without going extreme.
+			add = 200
+			tag = GER
+		}
+	}
+
+	default = no
+	continuous_focus_position = { x = 50 y = 1100 }
+	initial_show_position = { focus = GER_open_political_sphere }
+
+	#######################################
+	# POLITICAL BRANCH
+	#######################################
+
+	focus = {
+		id = GER_open_political_sphere
+		icon = GFX_goal_generic_demand_territory
+		x = 6
+		y = 0
+		cost = 5  # 5 * 7 = 35 days
+
+		ai_will_do = { factor = 10 }
+
+		completion_reward = {
+			add_political_power = 150
+		}
+	}
+
+	focus = {
+		id = GER_a_new_hero
+		icon = GFX_goal_generic_political_pressure
+		relative_position_id = GER_open_political_sphere
+		x = 0
+		y = 1
+		cost = 10  # 10 * 7 = 70 days
+
+		prerequisite = { focus = GER_open_political_sphere }
+
+		ai_will_do = { factor = 5 }
+
+		completion_reward = {
+			add_political_power = 50
+
+			# Rename the neutrality slot so that it now appears
+			# in the politics screen as RECONQUETE.
+			set_party_name = {
+				ideology = neutrality
+				long_name = GER_reconquete_party_long
+				name = GER_reconquete_party
+			}
+
+			# Promote Eric Zemmour as the active RECONQUETE
+			# (despotism / neutrality) leader. He has the
+			# country_leader role pre-defined in
+			# common/characters/german_rework_characters.txt, so
+			# promote_character flips the active leader from the
+			# vanilla random one to Zemmour without touching the
+			# fascist seat (Hitler).
+			promote_character = GER_eric_zemmour
+
+			# Permanent +0.01/day RECONQUETE (neutrality) drift.
+			add_ideas = GER_reconquete_movement
+
+			set_country_flag = GER_reconquete_founded
+
+			# World news: "A New Voice in Germany"
+			news_event = { id = ger_news.1 days = 0 }
+		}
+	}
+
+	focus = {
+		id = GER_epic_zemmour_anti_adolf_moment
+		icon = GFX_goal_generic_propaganda
+		relative_position_id = GER_a_new_hero
+		x = 0
+		y = 1
+		cost = 7  # ~50 days; HOI4 cost is in 7-day weeks (7*7 = 49)
+
+		prerequisite = { focus = GER_a_new_hero }
+
+		ai_will_do = { factor = 5 }
+
+		completion_reward = {
+			add_political_power = 50
+
+			# 320-day temporary idea: -0.1 fascism drift, +0.1
+			# neutrality (RECONQUETE) drift.
+			add_ideas = GER_zemmour_humiliation
+			# Schedule its removal exactly 320 days later.
+			country_event = { id = ger_political.1 days = 320 }
+
+			# World news: "Zemmour Publicly Denounces Hitler"
+			news_event = { id = ger_news.2 days = 0 }
+		}
+	}
+}

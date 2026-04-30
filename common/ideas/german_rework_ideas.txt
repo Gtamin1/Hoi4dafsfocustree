@@ -1,34 +1,39 @@
-###########################################################
-# Ideas / modifiers used by the German political rework.
+###############################################################
+# German Rework Expansion — custom ideas
 #
-# RECONQUETE is implemented on top of the existing
-# `neutrality` ideology slot (see germany.txt for the
-# rationale and the workaround note in the README).
-###########################################################
+# RECONQUETE is implemented on top of the existing `neutrality`
+# ideology slot (set_party_name renames it). Daily RECONQUETE
+# popularity gain is therefore neutrality_drift in HOI4 terms.
+###############################################################
 
 ideas = {
 
 	country = {
 
-		# Permanent idea granted by "A New Hero".
-		# Provides the constant +0.01/day RECONQUETE popularity gain.
+		# Permanent idea granted by GER_a_new_hero.
+		# +0.01/day RECONQUETE popularity gain.
 		GER_reconquete_movement = {
 			picture = generic_propaganda
+
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+
 			modifier = {
 				neutrality_drift = 0.01
 			}
 		}
 
-		# Temporary idea granted by "Epic Zemmour Anti Adolf Moment".
-		# Removed by ger_political.1 exactly 320 days after it is added.
+		# Temporary idea granted by GER_epic_zemmour_anti_adolf_moment.
+		# Removed 320 days later by ger_political.1.
+		# -0.1/day fascism drift, +0.1/day RECONQUETE drift.
 		GER_zemmour_humiliation = {
 			picture = generic_propaganda
+
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+
 			modifier = {
 				fascism_drift = -0.1
 				neutrality_drift = 0.1

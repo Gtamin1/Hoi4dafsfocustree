@@ -1,0 +1,38 @@
+###############################################################
+# German Rework Expansion — characters
+#
+# Eric Zemmour is defined here WITH a country_leader role on
+# the despotism (neutrality) sub-ideology. That makes him a
+# valid neutrality leader candidate for Germany from game start.
+#
+# He doesn't take over the active leader slot at game start —
+# vanilla's auto-generated despotism leader keeps it. Zemmour
+# becomes the active leader only when GER_a_new_hero finishes
+# and calls promote_character on him.
+#
+# This is safe because we are NOT overriding vanilla GER.txt.
+# Our file lives at common/characters/german_rework_characters.txt
+# and merges with vanilla rather than replacing it, so all
+# vanilla German characters (Hitler, Himmler, etc.) remain
+# defined and the bookmark / Conflict Risk / leader cache
+# systems on day 1 stay healthy.
+###############################################################
+
+characters = {
+
+	GER_eric_zemmour = {
+		name = GER_eric_zemmour
+		portraits = {
+			civilian = {
+				large = "GFX_Portrait_Eric_Zemmour"
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = { }
+			expire = "1965.1.1"
+			id = -1
+		}
+	}
+
+}

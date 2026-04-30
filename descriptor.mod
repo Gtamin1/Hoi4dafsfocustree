@@ -1,5 +1,6 @@
 name="German Rework Expansion"
-supported_version="1.14.*"
+version="0.1.0"
+supported_version="1.18.*"
 tags={
 	"Focuses"
 	"Alternative History"

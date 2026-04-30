@@ -1,31 +1,22 @@
-###########################################################
-# Sprite registrations for the German rework expansion.
+###############################################################
+# German Rework Expansion — sprite registrations
 #
-# The PNG files at the paths below are tiny 8x8 placeholder
-# images shipped with the mod so HOI4's async asset loader
-# never sees a missing texture (which crashes the game on the
-# first day tick via PHYSFS in a TBB worker thread).
-#
-# To use the real artwork, just overwrite each .png file at
-# its current path with your real image — no need to edit
-# this .gfx file.
-###########################################################
+# Three custom textures: Zemmour's portrait + two news pictures.
+# The PNG files live at the texturefile paths below.
+###############################################################
 
 spriteTypes = {
 
-	# Eric Zemmour — country leader portrait, large size.
 	spriteType = {
 		name = "GFX_Portrait_Eric_Zemmour"
 		texturefile = "gfx/leaders/GER/zemmourportrait.png"
 	}
 
-	# News event picture: Zemmour delivers his bar speech.
 	spriteType = {
 		name = "GFX_news_event_zemmour_introduce"
 		texturefile = "gfx/event_pictures/zemmourintroduce.png"
 	}
 
-	# News event picture: Zemmour mocks Hitler.
 	spriteType = {
 		name = "GFX_news_event_zemmour_mocks"
 		texturefile = "gfx/event_pictures/zemmourmocks.png"
