@@ -1,0 +1,33 @@
+###############################################################
+# German Rework Expansion — characters
+#
+# IMPORTANT — why this file is NOT named GER.txt:
+# Naming it GER.txt would replace vanilla's German character file
+# wholesale, deleting Hitler, Himmler, every vanilla advisor and
+# field marshal. Many vanilla GER decisions and events reference
+# those characters via auto-generated scripted effects
+# (GER_adolf_hitler = yes, etc.), so wiping them produces ~80
+# "Unknown effect-type" errors and a broken country.
+#
+# Using a unique filename keeps vanilla intact — characters from
+# both files merge.
+#
+# Eric Zemmour is defined here WITHOUT a country_leader role.
+# That role is granted at runtime by the GER_a_new_hero focus
+# completion via add_country_leader_role. This way Germany's
+# politics screen and AI evaluation see vanilla state until the
+# focus actually fires.
+###############################################################
+
+characters = {
+
+	GER_eric_zemmour = {
+		name = GER_eric_zemmour
+		portraits = {
+			civilian = {
+				large = "GFX_Portrait_Eric_Zemmour"
+			}
+		}
+	}
+
+}

@@ -1,9 +1,0 @@
-# German rework — character file intentionally empty.
-#
-# Eric Zemmour is created on the fly via create_country_leader
-# inside the GER_a_new_hero focus completion (see
-# common/national_focus/germany.txt). A pre-defined character
-# with no role (advisor / country_leader / military_leader)
-# turned out to make HOI4 1.18 unhappy during day-1 background
-# iteration of the country character pool.
-characters = { }
