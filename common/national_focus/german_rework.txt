@@ -76,6 +76,12 @@ focus_tree = {
 				name = GER_reconquete_party
 			}
 
+			# Retire the vanilla despotism leader (e.g. Johannes
+			# Kleinfelder) so Zemmour cleanly takes the slot.
+			# add_country_leader_role + promote_leader does not
+			# always swap when a leader is already active.
+			retire_country_leader = yes
+
 			# Install Eric Zemmour as the despotism (neutrality)
 			# country leader. add_country_leader_role both creates
 			# the leader role and (with promote_leader = yes)
