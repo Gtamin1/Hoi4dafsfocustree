@@ -75,10 +75,10 @@ focus_tree = {
 				long_name = GER_reconquete_party_long
 				name = GER_reconquete_party
 			}
-			# Recruit Zemmour into Germany first (he exists as a
-			# character definition but isn't part of GER until
-			# recruited), then promote him to neutrality leader.
-			recruit_character = GER_eric_zemmour
+			# Promote Zemmour as the new neutrality (RECONQUETE)
+			# country leader. promote_character auto-recruits a
+			# defined character if it isn't already part of the
+			# country, so we don't need a separate recruit_character.
 			promote_character = {
 				character = GER_eric_zemmour
 				ideology = despotism
