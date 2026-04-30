@@ -23,7 +23,10 @@ focus_tree = {
 	country = {
 		factor = 0
 		modifier = {
-			add = 20
+			# High enough to beat every vanilla and DLC German focus
+			# tree (Götterdämmerung, NSB, etc., which ship their own
+			# trees with their own picker weights).
+			add = 9999
 			tag = GER
 		}
 	}
