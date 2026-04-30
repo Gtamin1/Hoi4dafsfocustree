@@ -14,8 +14,12 @@
 # adding more `focus = { ... }` entries to this same tree.
 ###########################################################
 
+# NOTE: id is intentionally `german_focus` — the same id as the
+# vanilla German tree. Vanilla scripts (decisions, events, civil-war
+# triggers) call `load_focus_tree = german_focus` and would break if
+# we renamed it.
 focus_tree = {
-	id = german_rework_tree
+	id = german_focus
 	country = {
 		factor = 0
 		modifier = {
@@ -68,6 +72,10 @@ focus_tree = {
 				long_name = GER_reconquete_party_long
 				name = GER_reconquete_party
 			}
+			# Recruit Zemmour into Germany first (he exists as a
+			# character definition but isn't part of GER until
+			# recruited), then promote him to neutrality leader.
+			recruit_character = GER_eric_zemmour
 			promote_character = {
 				character = GER_eric_zemmour
 				ideology = despotism
