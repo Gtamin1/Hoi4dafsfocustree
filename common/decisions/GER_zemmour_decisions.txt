@@ -1,0 +1,195 @@
+###########################################################
+# Decisions for the Eric Zemmour / RECONQUETE expansion.
+###########################################################
+
+GER_zem_propaganda_category = {
+
+	GER_zem_broadcast_reconquete_speech = {
+		icon = generic_political_actions
+		allowed = { tag = GER }
+		available = {
+			has_country_flag = GER_zem_unlocked_radio_decisions
+		}
+		visible = {
+			has_country_flag = GER_zem_unlocked_radio_decisions
+		}
+		days_re_enable = 60
+		cost = 25
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_popularity = { ideology = neutrality popularity = 0.01 }
+			add_political_power = -25
+		}
+	}
+
+	GER_zem_print_meme_posters = {
+		icon = generic_political_actions
+		allowed = { tag = GER }
+		available = {
+			has_country_flag = GER_zem_unlocked_meme_posters
+		}
+		visible = {
+			has_country_flag = GER_zem_unlocked_meme_posters
+		}
+		days_re_enable = 45
+		cost = 20
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_popularity = { ideology = fascism popularity = -0.01 }
+			add_stability = -0.005
+		}
+	}
+
+	GER_zem_hold_public_debate = {
+		icon = generic_political_actions
+		allowed = { tag = GER }
+		available = {
+			has_country_flag = GER_zem_reconquete_founded
+		}
+		visible = {
+			has_country_flag = GER_zem_reconquete_founded
+		}
+		days_re_enable = 50
+		cost = 30
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			random_list = {
+				70 = {
+					add_popularity = { ideology = neutrality popularity = 0.015 }
+					add_popularity = { ideology = fascism popularity = -0.01 }
+				}
+				30 = {
+					add_stability = -0.01
+				}
+			}
+		}
+	}
+
+	GER_zem_audit_local_party_office = {
+		icon = generic_political_actions
+		allowed = { tag = GER }
+		available = {
+			has_country_flag = GER_zem_scandals_unlocked
+		}
+		visible = {
+			has_country_flag = GER_zem_scandals_unlocked
+		}
+		days_re_enable = 90
+		cost = 35
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_popularity = { ideology = fascism popularity = -0.015 }
+		}
+	}
+
+	GER_zem_radio_rebuttal = {
+		icon = generic_political_actions
+		allowed = { tag = GER }
+		available = {
+			has_country_flag = GER_zem_unlocked_radio_decisions
+		}
+		visible = {
+			has_country_flag = GER_zem_unlocked_radio_decisions
+		}
+		days_re_enable = 90
+		cost = 30
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_timed_idea = { idea = GER_zem_friendly_press_idea days = 90 }
+		}
+	}
+
+}
+
+GER_zem_organization_category = {
+
+	GER_zem_open_local_chapter = {
+		icon = generic_political_actions
+		allowed = { tag = GER }
+		available = {
+			has_country_flag = GER_zem_local_chapters_open
+		}
+		visible = {
+			has_country_flag = GER_zem_local_chapters_open
+		}
+		days_re_enable = 60
+		cost = 25
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_popularity = { ideology = neutrality popularity = 0.01 }
+		}
+	}
+
+	GER_zem_secure_municipality = {
+		icon = generic_political_actions
+		allowed = { tag = GER }
+		available = {
+			has_country_flag = GER_zem_local_chapters_open
+		}
+		visible = {
+			has_country_flag = GER_zem_local_chapters_open
+		}
+		days_re_enable = 75
+		cost = 40
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_stability = 0.01
+			add_popularity = { ideology = neutrality popularity = 0.01 }
+		}
+	}
+
+	GER_zem_campaign_train_stop = {
+		icon = generic_political_actions
+		allowed = { tag = GER }
+		available = {
+			has_country_flag = GER_zem_referendum_unlocked
+		}
+		visible = {
+			has_country_flag = GER_zem_referendum_unlocked
+		}
+		days_re_enable = 30
+		cost = 20
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_popularity = { ideology = neutrality popularity = 0.005 }
+			set_country_flag = GER_zem_referendum_momentum
+		}
+	}
+
+	GER_zem_conservative_negotiation = {
+		icon = generic_political_actions
+		allowed = { tag = GER }
+		available = {
+			has_completed_focus = GER_zem_court_the_conservatives
+		}
+		visible = {
+			has_completed_focus = GER_zem_court_the_conservatives
+		}
+		days_re_enable = 60
+		cost = 30
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_stability = 0.01
+			set_country_flag = GER_zem_compromise_momentum
+		}
+	}
+
+	GER_zem_public_order_operation = {
+		icon = generic_political_actions
+		allowed = { tag = GER }
+		available = {
+			has_country_flag = GER_zem_security_review_done
+		}
+		visible = {
+			has_country_flag = GER_zem_security_review_done
+		}
+		days_re_enable = 90
+		cost = 50
+		ai_will_do = { factor = 1 }
+		complete_effect = {
+			add_stability = 0.02
+			add_popularity = { ideology = fascism popularity = -0.01 }
+		}
+	}
+
+}

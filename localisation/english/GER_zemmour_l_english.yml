@@ -1,0 +1,543 @@
+l_english:
+
+ ##########################################
+ # FOCUS NAMES & DESCRIPTIONS — RECONQUETE expansion
+ ##########################################
+
+ GER_zem_print_the_manifesto:0 "Print the Manifesto"
+ GER_zem_print_the_manifesto_desc:0 "Zemmour's supporters transform tavern applause into printed doctrine. The first RECONQUETE manifesto mixes national renewal, mockery of stale slogans, bureaucratic discipline, and a promise that Germany will be governed by argument rather than tantrum."
+
+ GER_zem_barroom_network:0 "The Barroom Network"
+ GER_zem_barroom_network_desc:0 "From Munich beer halls to smoky Berlin taverns, local organisers turn informal debate circles into a national political machine. Every table becomes a miniature campaign office, and the regime's informers no longer know which conversations to take seriously."
+
+ GER_zem_mockery_as_weapon:0 "Mockery as a Weapon"
+ GER_zem_mockery_as_weapon_desc:0 "The movement learns that ridicule can puncture a cult faster than pamphlets. Speeches, jokes, posters, and caricatures transform Hitler from untouchable symbol into a punchline, and once a man is laughed at he can no longer be feared."
+
+ GER_zem_organize_student_cells:0 "Organize Student Cells"
+ GER_zem_organize_student_cells_desc:0 "Universities become recruitment grounds for the new movement. Debating societies, lecture circles, and student newspapers carry RECONQUETE slogans across the country, and a generation discovers that politics need not be a screaming match."
+
+ GER_zem_union_of_speakers:0 "Union of Speakers"
+ GER_zem_union_of_speakers_desc:0 "RECONQUETE trains speakers who can face hecklers, win crowds, and redirect anger away from fascist theatrics. The party becomes known for disciplined public argument rather than empty volume."
+
+ GER_zem_newspapers_against_hysteria:0 "Newspapers Against Hysteria"
+ GER_zem_newspapers_against_hysteria_desc:0 "Friendly editors receive interviews, columns, and cartoons. Newspapers begin presenting fascist hysteria as embarrassing political theatre rather than destiny, and the regime's mythology starts to look like a third-rate stage play."
+
+ GER_zem_radio_argument_hour:0 "The Radio Argument Hour"
+ GER_zem_radio_argument_hour_desc:0 "Radio makes the tavern speech national. Zemmour's voice, sharpened into weekly addresses, reaches factories, farms, and army barracks, and listeners discover that political argument can sound like literature instead of barking."
+
+ GER_zem_tailors_of_the_new_suit:0 "Tailors of the New Suit"
+ GER_zem_tailors_of_the_new_suit_desc:0 "The movement adopts a deliberately sober image: dark suits, clean documents, and a refusal to drown politics in theatrical uniforms. Aesthetic discipline becomes a political statement."
+
+ GER_zem_reconquete_youth_leagues:0 "RECONQUETE Youth Leagues"
+ GER_zem_reconquete_youth_leagues_desc:0 "Youth leagues form around debate, physical training, civil discipline, and loud contempt for stale extremism. The regime watches them nervously and discovers that nothing terrifies a cult more than an organised eighteen-year-old with footnotes."
+
+ GER_zem_rally_in_berlin:0 "Rally in Berlin"
+ GER_zem_rally_in_berlin_desc:0 "A massive rally in Berlin proves the movement is no longer a tavern joke. Crowds chant for political renewal and laugh at the old regime's attempts to dismiss them, and the international press takes notes."
+
+ GER_zem_the_slogan_machine:0 "The Slogan Machine"
+ GER_zem_the_slogan_machine_desc:0 "A special committee turns every fascist cliche into a counter-slogan. Germany discovers that propaganda can be both disciplined and extremely petty, and the new posters spread faster than the old ones could be torn down."
+
+ GER_zem_local_chapters:0 "Local Chapters"
+ GER_zem_local_chapters_desc:0 "The movement organises at the district level. Local chapters coordinate meetings, canvassing, pamphlet delivery, and rapid responses to fascist intimidation, turning enthusiasm into infrastructure."
+
+ GER_zem_membership_books:0 "Membership Books"
+ GER_zem_membership_books_desc:0 "RECONQUETE replaces loose enthusiasm with membership ledgers, dues, committees, and accountability. The meme movement becomes an institution, complete with a treasurer who is never amused."
+
+ GER_zem_the_bar_becomes_a_party:0 "The Bar Becomes a Party"
+ GER_zem_the_bar_becomes_a_party_desc:0 "The original tavern becomes a mythic headquarters. What began as a speech over beer now claims to be the founding moment of a German political rebirth, and the regional chapters all repeat the same origin story with regional embellishments."
+
+ GER_zem_expose_the_screamers:0 "Expose the Screamers"
+ GER_zem_expose_the_screamers_desc:0 "RECONQUETE publishes compilations of fascist contradictions, failed promises, and theatrical excess. Hitler's loyalists rage, which only proves the point — and every banned booklet is reprinted twice over by the next morning."
+
+ GER_zem_debate_the_brownshirts:0 "Debate the Brownshirts"
+ GER_zem_debate_the_brownshirts_desc:0 "Instead of meeting street muscle with street muscle, Zemmour demands public debates. The brownshirts discover that slogans fare poorly under cross-examination, and the audience learns that intimidation can be answered with footnotes."
+
+ GER_zem_split_the_old_party:0 "Split the Old Party"
+ GER_zem_split_the_old_party_desc:0 "Moderates, opportunists, and embarrassed officials are offered a ladder down from Hitler's cult. The old party begins to crack under its own absurdity, and entire wings discreetly walk into RECONQUETE meetings carrying their own paperwork."
+
+ GER_zem_parliament_of_insults:0 "Parliament of Insults"
+ GER_zem_parliament_of_insults_desc:0 "A chaotic parliamentary session becomes legendary when RECONQUETE deputies answer every threat with surgical mockery. The transcripts sell out by morning, and the speaker is forced to invent new procedural rules in real time."
+
+ GER_zem_vote_of_no_confidence:0 "Vote of No Confidence"
+ GER_zem_vote_of_no_confidence_desc:0 "RECONQUETE forces a formal confrontation with the government. What was whispered in taverns is now recorded in state procedure, and the regime can no longer pretend that the movement is a fringe annoyance."
+
+ GER_zem_the_empty_podium_trick:0 "The Empty Podium Trick"
+ GER_zem_the_empty_podium_trick_desc:0 "When Hitler refuses a debate, RECONQUETE stages an empty podium beside Zemmour and lets the silence argue for itself. The image circulates faster than any rebuttal could have."
+
+ GER_zem_investigate_party_finances:0 "Investigate Party Finances"
+ GER_zem_investigate_party_finances_desc:0 "Accountants and hostile journalists follow the money. The regime's moral posturing looks less impressive beside ledgers and receipts, and several minor scandals queue up for their day in court."
+
+ GER_zem_the_moustache_question:0 "The Moustache Question"
+ GER_zem_the_moustache_question_desc:0 "A ridiculous pamphlet asks why a nation should be governed by facial hair and fury. The regime bans it, ensuring that everyone reads it and that the joke spreads to every workshop in the country."
+
+ GER_zem_public_order_without_thugs:0 "Public Order Without Thugs"
+ GER_zem_public_order_without_thugs_desc:0 "RECONQUETE promises that order does not require party thugs. Local officials tired of street chaos quietly begin cooperating, and uniformed politics begins to lose its automatic prestige."
+
+ GER_zem_the_trial_of_theatrics:0 "The Trial of Theatrics"
+ GER_zem_the_trial_of_theatrics_desc:0 "A public inquiry turns the regime's performance style into evidence of political unseriousness. The hearings are devastating, quotable, and impossible to ignore, and the regime's defenders sound increasingly like nervous understudies."
+
+ GER_zem_isolate_hitler_loyalists:0 "Isolate Hitler Loyalists"
+ GER_zem_isolate_hitler_loyalists_desc:0 "RECONQUETE separates hard loyalists from opportunists, then isolates the hardliners in public. The old machine loses its aura of inevitability, and even sympathisers begin to keep a polite distance from anyone still shouting from rooftops."
+
+ GER_zem_secure_the_chancellery:0 "Secure the Chancellery"
+ GER_zem_secure_the_chancellery_desc:0 "The political crisis reaches the Chancellery. Through procedure, pressure, coalition bargains, and public momentum, Zemmour enters government as Germany's new political centre. The doors are not kicked in; they are unlocked by accountants."
+
+ GER_zem_cabinet_of_reconquest:0 "Cabinet of RECONQUETE"
+ GER_zem_cabinet_of_reconquest_desc:0 "The new cabinet is assembled from loyal organisers, conservative administrators, technocrats, and professional mockers of the old regime. Every department gets a desk, a brief, and a strict instruction not to scream."
+
+ GER_zem_ministry_of_argument:0 "Ministry of Argument"
+ GER_zem_ministry_of_argument_desc:0 "The new government institutionalises debate training, public rebuttal, and ideological education. Every ministry gets talking points and footnotes, and ministers are reminded that any public statement may be quoted in court."
+
+ GER_zem_reform_the_civil_service:0 "Reform the Civil Service"
+ GER_zem_reform_the_civil_service_desc:0 "Civil servants are told that the era of theatrical commands is over. Paperwork, competence, and procedure become political virtues again, and the more dramatic appointees of the previous regime quietly disappear into provincial archives."
+
+ GER_zem_reconquete_constitutional_act:0 "RECONQUETE Constitutional Act"
+ GER_zem_reconquete_constitutional_act_desc:0 "A constitutional act formalises the new political order without resorting to revolutionary chaos. The state is redirected through law, not street brawls, and the act is debated line by line on national radio."
+
+ GER_zem_party_above_the_meme:0 "Party Above the Meme"
+ GER_zem_party_above_the_meme_desc:0 "Zemmour warns supporters that a meme can win attention, but only institutions can govern. The movement begins acting like a state party, and the loudest jokers are gently reassigned to drafting committees."
+
+ GER_zem_restore_public_confidence:0 "Restore Public Confidence"
+ GER_zem_restore_public_confidence_desc:0 "The government lowers the temperature, ends the daily spectacle, and reassures citizens that politics need not be permanent crisis. The papers run boring headlines, and the country breathes for the first time in years."
+
+ GER_zem_clean_government_campaign:0 "Clean Government Campaign"
+ GER_zem_clean_government_campaign_desc:0 "The new regime targets graft, party favours, and propaganda slush funds. Nothing humiliates the old order like an audit, and entire fortunes evaporate under the cold eye of a balance sheet."
+
+ GER_zem_appoint_the_orators:0 "Appoint the Orators"
+ GER_zem_appoint_the_orators_desc:0 "Veteran speakers of the barroom era are given official roles. Their job is to explain policy before rumours can explain it first, and they discover that ministerial briefings make for excellent material."
+
+ GER_zem_national_reconciliation_committees:0 "National Reconciliation Committees"
+ GER_zem_national_reconciliation_committees_desc:0 "Local committees draw former opponents into public hearings and municipal compromise. Germany exhales, though not quietly, and the worst extremists find that their old supporters now prefer practical neighbours to ideological brothers."
+
+ GER_zem_the_serious_man_doctrine:0 "The Serious Man Doctrine"
+ GER_zem_the_serious_man_doctrine_desc:0 "Government propaganda reframes Zemmour as the serious man who defeated the screamers. The joke becomes a doctrine of disciplined rule, and ministerial briefings begin opening with quotations from the founding tavern speech."
+
+ GER_zem_court_the_conservatives:0 "Court the Conservatives"
+ GER_zem_court_the_conservatives_desc:0 "Old conservatives dislike Hitler's chaos and distrust Zemmour's meme army. They can still be convinced that he is the safer bet, particularly once a few of them are offered nicely framed cabinet portraits."
+
+ GER_zem_pact_with_industrialists:0 "Pact with Industrialists"
+ GER_zem_pact_with_industrialists_desc:0 "Industrialists are promised predictability, anti-chaos politics, and no endless revolutionary theatre. Their money and newspapers begin to shift, and the movement gains sources that have never knocked a beer table over in their lives."
+
+ GER_zem_churchill_not_called:0 "Churchill Is Not Called"
+ GER_zem_churchill_not_called_desc:0 "A confused aide suggests asking Britain for advice. Zemmour rejects it, declaring Germany can make its own political comedy and that the British are notorious for stealing punchlines."
+
+ GER_zem_reassure_the_army:0 "Reassure the Army"
+ GER_zem_reassure_the_army_desc:0 "The officer corps is promised order, budgets, and fewer humiliating speeches from amateurs. They listen carefully, and several grim generals are observed nodding very slightly."
+
+ GER_zem_the_sober_uniform_policy:0 "The Sober Uniform Policy"
+ GER_zem_the_sober_uniform_policy_desc:0 "The government restricts party uniforms and theatrical street displays. Politics must return to offices, halls, ballots, and newspapers, and the country experiences a strange and welcome quiet on weekends."
+
+ GER_zem_prussian_administrators:0 "Prussian Administrators"
+ GER_zem_prussian_administrators_desc:0 "Experienced administrators are brought back into government. Their charisma is negligible; their file discipline is terrifying, and the trains begin running with insulting punctuality."
+
+ GER_zem_monarchist_conversation:0 "The Monarchist Conversation"
+ GER_zem_monarchist_conversation_desc:0 "Some conservatives request a symbolic restoration. Zemmour permits discussion, provided nobody interrupts the actual government, and the matter quietly returns to private dinner conversations where it does no harm."
+
+ GER_zem_bureaucrats_over_brawlers:0 "Bureaucrats Over Brawlers"
+ GER_zem_bureaucrats_over_brawlers_desc:0 "The state prefers boring administrators to street fighters. The old paramilitary aesthetic loses access to government corridors, and the corridors themselves are repainted in a shade specifically chosen to discourage shouting."
+
+ GER_zem_the_grand_compromise:0 "The Grand Compromise"
+ GER_zem_the_grand_compromise_desc:0 "Conservatives, Zemmourists, technocrats, and anti-Hitler defectors sign a governing compromise. It is ugly, effective, and very German, and the document is countersigned by men who would never share a tavern table in private."
+
+ GER_zem_radical_plebiscite:0 "Radical Plebiscite"
+ GER_zem_radical_plebiscite_desc:0 "Instead of elite compromise, Zemmour turns to the voters. A national plebiscite will decide whether Germany wants a Zemmourist future, and the movement bets its credibility on a single nationwide ballot."
+
+ GER_zem_campaign_trains:0 "Campaign Trains"
+ GER_zem_campaign_trains_desc:0 "Trains carry speakers, posters, and portable microphones across Germany. The movement becomes a rolling argument, and rural stations that have never seen a national politician suddenly receive three a week."
+
+ GER_zem_ballots_not_brownshirts:0 "Ballots Not Brownshirts"
+ GER_zem_ballots_not_brownshirts_desc:0 "The referendum campaign presents a simple contrast: ballots and speeches against fists and shouting. Even sceptical citizens understand the choice, and the phrase becomes a slogan stencilled onto walls overnight."
+
+ GER_zem_referendum_on_the_future:0 "Referendum on the Future"
+ GER_zem_referendum_on_the_future_desc:0 "Germany votes on whether the new movement should govern. The result will determine whether Zemmour rules by mandate or coalition bargain, and the night of the count is broadcast across the country in a tense, almost reverent silence."
+
+ GER_zem_constitutional_guardrails:0 "Constitutional Guardrails"
+ GER_zem_constitutional_guardrails_desc:0 "The victorious movement writes limits into its own rise: procedure, fixed offices, and legal forms to prevent another cult from replacing the last. Legal scholars are quietly surprised to be invited into government."
+
+ GER_zem_the_republic_of_rebuttals:0 "The Republic of Rebuttals"
+ GER_zem_the_republic_of_rebuttals_desc:0 "Political legitimacy is redefined as the ability to survive rebuttal. Every minister is expected to defend policy in public, and the new constitution effectively turns the country into a permanent debate club with state powers."
+
+ GER_zem_majority_of_mockery:0 "Majority of Mockery"
+ GER_zem_majority_of_mockery_desc:0 "Satirical posters, debate victories, and exhausted voters combine into a majority coalition that laughs the old extremists offstage. The opposition retreats, muttering, into provincial committees that nobody listens to."
+
+ GER_zem_legal_end_of_the_cult:0 "Legal End of the Cult"
+ GER_zem_legal_end_of_the_cult_desc:0 "A legal process dismantles the cult's institutional privileges. The focus is not vengeance; it is making the spectacle ordinary, taxable, and beatable, and the courts move with deliberate boredom."
+
+ GER_zem_european_conference_no_france_war:0 "European Conference"
+ GER_zem_european_conference_no_france_war_desc:0 "Zemmour's Germany hosts a conference promising political confidence without reckless western adventures. France is addressed as a neighbour, not a target, and delegates leave with the unfamiliar sensation that Berlin has stopped shouting."
+
+ GER_zem_trade_over_tantrums:0 "Trade Over Tantrums"
+ GER_zem_trade_over_tantrums_desc:0 "The new government argues that serious states trade before they threaten. Economic committees replace shouting matches, and Germany's rail timetables become a more interesting export than its slogans."
+
+ GER_zem_non_aggression_in_the_west:0 "Non-Aggression in the West"
+ GER_zem_non_aggression_in_the_west_desc:0 "Germany publicly rejects immediate western war politics. The announcement shocks hardliners and reassures border communities, and several embassy bars in Paris and London report unusually relaxed evenings."
+
+ GER_zem_central_european_dialogue:0 "Central European Dialogue"
+ GER_zem_central_european_dialogue_desc:0 "Berlin opens talks with Central European governments about trade, railways, and anti-chaos diplomacy. The conversations are dull, technical, and quietly transformative."
+
+ GER_zem_anti_communist_argument_not_crusade:0 "Anti-Communist Argument, Not Crusade"
+ GER_zem_anti_communist_argument_not_crusade_desc:0 "The government opposes communism through speeches, unions, and elections rather than immediate reckless crusades. Pamphlets multiply; armies, mercifully, do not."
+
+ GER_zem_secure_the_borders_without_adventures:0 "Secure the Borders Without Adventures"
+ GER_zem_secure_the_borders_without_adventures_desc:0 "Security policy is reframed as defence, customs control, and border administration, not grandstanding conquest. Border guards are issued thicker manuals and warmer coats."
+
+ GER_zem_diplomats_with_punchlines:0 "Diplomats With Punchlines"
+ GER_zem_diplomats_with_punchlines_desc:0 "Germany's diplomats are instructed to be serious in policy and devastating in after-dinner remarks. It works more often than expected, and several major treaties are signed by counterparts who arrived determined to refuse."
+
+ GER_zem_radio_to_the_world:0 "Radio to the World"
+ GER_zem_radio_to_the_world_desc:0 "International broadcasts present the Zemmourist turn as Germany choosing argument over hysteria. Foreign capitals listen with caution, and several long-running newsroom prejudices are quietly revised."
+
+ GER_zem_internal_security_review:0 "Internal Security Review"
+ GER_zem_internal_security_review_desc:0 "The new government reviews police, courts, and local administrations to ensure extremist loyalists cannot sabotage the transition. Quiet reassignments do more work than any decree could."
+
+ GER_zem_ban_private_armies:0 "Ban Private Armies"
+ GER_zem_ban_private_armies_desc:0 "Paramilitary politics is declared incompatible with the new order. Germany will have one state, not competing uniforms, and the surplus armbands fill several state warehouses."
+
+ GER_zem_civic_discipline_campaign:0 "Civic Discipline Campaign"
+ GER_zem_civic_discipline_campaign_desc:0 "Citizens are urged to treat politics as civic duty rather than mass hysteria. Posters emphasise queues, punctuality, debate, and clean paperwork, and the country accepts the propaganda with a kind of ironic relief."
+
+ GER_zem_restore_local_elections:0 "Restore Local Elections"
+ GER_zem_restore_local_elections_desc:0 "Municipal elections return under strict public-order rules. RECONQUETE expects to win by making its opponents look ridiculous, and the early returns suggest the strategy is working."
+
+ GER_zem_party_finance_law:0 "Party Finance Law"
+ GER_zem_party_finance_law_desc:0 "Party money must be declared, audited, and made boring. Extremists hate it immediately, and the law's annual reporting requirements eliminate several traditional sources of mischief."
+
+ GER_zem_courts_against_cults:0 "Courts Against Cults"
+ GER_zem_courts_against_cults_desc:0 "Courts receive authority to dismantle coercive political cult structures while preserving normal political organisation. Judges, traditionally cautious, find the topic surprisingly congenial."
+
+ GER_zem_reeducate_the_propagandists:0 "Reeducate the Propagandists"
+ GER_zem_reeducate_the_propagandists_desc:0 "Former regime propagandists are reassigned to public-service messaging. Some complain that accuracy ruins their art; their new editors disagree with quiet finality."
+
+ GER_zem_audit_the_rallies:0 "Audit the Rallies"
+ GER_zem_audit_the_rallies_desc:0 "A dry financial audit of old mass rallies reveals absurd expenses, suspicious contracts, and entirely too much money spent on lighting. The published report is, briefly, the country's best-selling book."
+
+ GER_zem_public_broadcasting_charter:0 "Public Broadcasting Charter"
+ GER_zem_public_broadcasting_charter_desc:0 "Radio is reorganised under a charter requiring civic education, debate programming, and a legally protected right to mock bad speeches. Every household soon has an opinion on whether the Tuesday rebuttal hour is fair."
+
+ GER_zem_the_new_civic_calendar:0 "The New Civic Calendar"
+ GER_zem_the_new_civic_calendar_desc:0 "The founding tavern speech, the empty podium debate, and the referendum become civic dates in the new political mythology. They are observed with parades that contain no boots."
+
+ GER_zem_economic_seriousness:0 "Economic Seriousness"
+ GER_zem_economic_seriousness_desc:0 "Zemmour insists that a political movement which cannot manage prices should not manage history. Economic seriousness becomes a slogan, and ministers find their press conferences abruptly populated by men with calculators."
+
+ GER_zem_workers_who_argue_back:0 "Workers Who Argue Back"
+ GER_zem_workers_who_argue_back_desc:0 "Workers are invited into structured debate forums rather than abandoned to extremist recruitment. The meetings are loud but productive, and the resulting policy papers are surprisingly readable."
+
+ GER_zem_small_business_reconquest:0 "Small Business Reconquest"
+ GER_zem_small_business_reconquest_desc:0 "Shopkeepers and small manufacturers receive regulatory relief in exchange for joining the national stabilisation campaign. Their participation gives the movement a quieter, less spectacular base of support."
+
+ GER_zem_housing_without_hysteria:0 "Housing Without Hysteria"
+ GER_zem_housing_without_hysteria_desc:0 "Housing policy is presented without ideological screaming: bricks, rent rules, municipal planning, and fewer theatrical promises. The buildings are not impressive, but the families inside them are."
+
+ GER_zem_culture_of_debate:0 "Culture of Debate"
+ GER_zem_culture_of_debate_desc:0 "The government sponsors debates, essays, lecture halls, and competitions for the most devastating lawful rebuttal. The country develops a national habit of correcting itself in public."
+
+ GER_zem_national_style_commission:0 "National Style Commission"
+ GER_zem_national_style_commission_desc:0 "A commission studies why extremist aesthetics are so ugly and recommends cleaner typography, better suits, and fewer torches. The report is, against all expectation, charming."
+
+ GER_zem_reconquete_social_contract:0 "RECONQUETE Social Contract"
+ GER_zem_reconquete_social_contract_desc:0 "The government promises order, argument, work, family stability, and public dignity. In return, citizens are asked to stop applauding madmen, and the bargain seems to hold."
+
+ GER_zem_the_second_tavern_speech:0 "The Second Tavern Speech"
+ GER_zem_the_second_tavern_speech_desc:0 "Zemmour returns to the tavern where everything began. This time the speech is broadcast nationwide, and the joke has become a regime, and the regulars at the back of the room have learned to clap like cabinet ministers."
+
+ GER_zem_reconquete_majority:0 "RECONQUETE Majority"
+ GER_zem_reconquete_majority_desc:0 "The party wins or consolidates a national majority. Its opponents still sneer, but they do so from the opposition benches, where their sneering is recorded for the official transcript."
+
+ GER_zem_end_the_hitler_question:0 "End the Hitler Question"
+ GER_zem_end_the_hitler_question_desc:0 "Hitler is reduced from existential problem to legal nuisance, failed celebrity, and cautionary example in school debates. The country closes the file with a sense of administrative triumph."
+
+ GER_zem_the_zemmourist_state:0 "The Zemmourist State"
+ GER_zem_the_zemmourist_state_desc:0 "The state now speaks in the language of RECONQUETE: combative, bureaucratic, sarcastic, and determined never again to be ruled by theatrical hysteria. Every ministerial briefing closes with footnotes."
+
+ GER_zem_europe_without_tantrums:0 "Europe Without Tantrums"
+ GER_zem_europe_without_tantrums_desc:0 "Germany declares that European politics should be conducted through conferences, trade, and sharp speeches rather than reckless escalation. France is treated as a neighbour, not a target."
+
+ GER_zem_the_final_rebuttal:0 "The Final Rebuttal"
+ GER_zem_the_final_rebuttal_desc:0 "In a final national address, Zemmour frames the entire political transformation as one long rebuttal to Hitler. Germany is not quiet, but it is no longer hypnotised, and the broadcast becomes one of the most quoted speeches in modern European history."
+
+ ##########################################
+ # IDEAS — RECONQUETE expansion
+ ##########################################
+
+ GER_zem_reconquete_rising:0 "RECONQUETE Rising"
+ GER_zem_reconquete_rising_desc:0 "The new movement grows from taverns, pamphlets, radio speeches, and the irresistible political power of making Hitler look ridiculous."
+
+ GER_zem_barroom_network_idea:0 "Barroom Network"
+ GER_zem_barroom_network_idea_desc:0 "Every tavern table seems to have become a cell of the new movement, and the regime can no longer tell drinking from organising."
+
+ GER_zem_trained_street_orators:0 "Trained Street Orators"
+ GER_zem_trained_street_orators_desc:0 "RECONQUETE speakers are trained to defeat hecklers, survive hostile crowds, and transform insults into applause."
+
+ GER_zem_local_chapters_idea:0 "Local Chapters"
+ GER_zem_local_chapters_idea_desc:0 "District-level chapters coordinate meetings, recruit members, and deliver pamphlets faster than the regime can ban them."
+
+ GER_zem_public_order_without_thugs_idea:0 "Public Order Without Thugs"
+ GER_zem_public_order_without_thugs_idea_desc:0 "The state is reclaiming public order from party militias and political street theatre."
+
+ GER_zem_cabinet_of_reconquest:0 "Cabinet of RECONQUETE"
+ GER_zem_cabinet_of_reconquest_desc:0 "The movement has become a government and must now survive the terrifying burden of competence."
+
+ GER_zem_orator_ministers_idea:0 "Orator Ministers"
+ GER_zem_orator_ministers_idea_desc:0 "Cabinet members are expected to defend their portfolios in public debate, and most of them prefer it that way."
+
+ GER_zem_constitutional_guardrails_idea:0 "Constitutional Guardrails"
+ GER_zem_constitutional_guardrails_idea_desc:0 "The new order limits itself in law so that no cult can simply replace the last."
+
+ GER_zem_grand_compromise_idea:0 "The Grand Compromise"
+ GER_zem_grand_compromise_idea_desc:0 "Conservatives, technocrats, and Zemmourists have signed an ugly but functional governing pact."
+
+ GER_zem_public_broadcasting_charter_idea:0 "Public Broadcasting Charter"
+ GER_zem_public_broadcasting_charter_idea_desc:0 "Radio has been converted from hysteria delivery system into a public arena for speeches, rebuttals, and civic education."
+
+ GER_zem_zemmourist_state:0 "The Zemmourist State"
+ GER_zem_zemmourist_state_desc:0 "Germany now operates under a Zemmourist political style: combative, legalistic, theatrical only when useful, and permanently allergic to Hitlerian melodrama."
+
+ GER_zem_student_cells_idea:0 "Active Student Cells"
+ GER_zem_student_cells_idea_desc:0 "University debate societies have become recruiting grounds for the movement."
+
+ GER_zem_friendly_press_idea:0 "Friendly Press"
+ GER_zem_friendly_press_idea_desc:0 "Sympathetic editors are publishing daily rebuttals of fascist hysteria."
+
+ GER_zem_radio_hour_idea:0 "Radio Argument Hour"
+ GER_zem_radio_hour_idea_desc:0 "Weekly RECONQUETE addresses are reaching factories, farms, and barracks."
+
+ GER_zem_old_party_split_idea:0 "Old Party Splitting"
+ GER_zem_old_party_split_idea_desc:0 "Moderates are quietly leaving the regime, and every defection is loudly announced."
+
+ GER_zem_humiliated_propagandists:0 "Humiliated Propagandists"
+ GER_zem_humiliated_propagandists_desc:0 "The old propaganda machine looks smaller after being mocked in public."
+
+ GER_zem_moustache_pamphlet_idea:0 "Moustache Pamphlet"
+ GER_zem_moustache_pamphlet_idea_desc:0 "A satirical pamphlet about facial hair has somehow become required reading in every workshop."
+
+ GER_zem_isolate_loyalists_idea:0 "Isolated Loyalists"
+ GER_zem_isolate_loyalists_idea_desc:0 "Hardline regime loyalists are being separated from opportunists and exposed to public scrutiny."
+
+ GER_zem_ministry_of_argument_idea:0 "Ministry of Argument"
+ GER_zem_ministry_of_argument_idea_desc:0 "Public rebuttal training has been made part of every ministry's standard practice."
+
+ GER_zem_civil_service_reform_idea:0 "Civil Service Reform"
+ GER_zem_civil_service_reform_idea_desc:0 "Civil servants are filing reports instead of staging rallies."
+
+ GER_zem_industrial_pact_idea:0 "Industrial Pact"
+ GER_zem_industrial_pact_idea_desc:0 "Industrialists have agreed to predictable politics in exchange for stable production rules."
+
+ GER_zem_prussian_admin_idea:0 "Prussian Administrators"
+ GER_zem_prussian_admin_idea_desc:0 "Veteran administrators have returned to government, and their file discipline is terrifying."
+
+ GER_zem_campaign_trains_idea:0 "Campaign Trains"
+ GER_zem_campaign_trains_idea_desc:0 "Trains carrying speakers and posters are turning the country into one rolling argument."
+
+ GER_zem_republic_of_rebuttals_idea:0 "Republic of Rebuttals"
+ GER_zem_republic_of_rebuttals_idea_desc:0 "Every minister is expected to defend policy in public; legitimacy is now measured in surviving rebuttal."
+
+ GER_zem_trade_over_tantrums_idea:0 "Trade Over Tantrums"
+ GER_zem_trade_over_tantrums_idea_desc:0 "Trade negotiations now take precedence over diplomatic theatrics."
+
+ GER_zem_anti_communist_argument_idea:0 "Anti-Communist Argument"
+ GER_zem_anti_communist_argument_idea_desc:0 "Anti-communism is being argued in print and in elections, not on battlefields."
+
+ GER_zem_defensive_posture_idea:0 "Defensive Posture"
+ GER_zem_defensive_posture_idea_desc:0 "Border policy is reframed as defence and customs administration."
+
+ GER_zem_civic_discipline_idea:0 "Civic Discipline"
+ GER_zem_civic_discipline_idea_desc:0 "Citizens are being asked to treat politics as civic duty rather than mass spectacle."
+
+ GER_zem_courts_against_cults_idea:0 "Courts Against Cults"
+ GER_zem_courts_against_cults_idea_desc:0 "Courts are dismantling coercive cult structures while leaving ordinary parties alone."
+
+ GER_zem_economic_seriousness_idea:0 "Economic Seriousness"
+ GER_zem_economic_seriousness_idea_desc:0 "Economic policy is being conducted by men with calculators rather than men with megaphones."
+
+ GER_zem_workers_argue_back_idea:0 "Workers Who Argue Back"
+ GER_zem_workers_argue_back_idea_desc:0 "Structured worker forums are absorbing energy that once leaked into extremist recruitment."
+
+ GER_zem_small_business_idea:0 "Small Business Reconquest"
+ GER_zem_small_business_idea_desc:0 "Shopkeepers and small manufacturers have joined the national stabilisation campaign."
+
+ GER_zem_housing_idea:0 "Housing Without Hysteria"
+ GER_zem_housing_idea_desc:0 "Municipal housing policy has resumed without ideological screaming."
+
+ GER_zem_culture_of_debate_idea:0 "Culture of Debate"
+ GER_zem_culture_of_debate_idea_desc:0 "Lecture halls and debate competitions have replaced rallies as the country's preferred political evening."
+
+ ##########################################
+ # OPINION MODIFIERS
+ ##########################################
+
+ GER_zem_peaceful_neighbor:0 "Peaceful Neighbour Diplomacy"
+ GER_zem_non_aggression:0 "RECONQUETE Non-Aggression"
+
+ ##########################################
+ # DECISION CATEGORIES
+ ##########################################
+
+ GER_zem_propaganda_category:0 "RECONQUETE Propaganda"
+ GER_zem_propaganda_category_desc:0 "Mockery, broadcasts, debates, and other propaganda decisions of the RECONQUETE movement."
+
+ GER_zem_organization_category:0 "RECONQUETE Organisation"
+ GER_zem_organization_category_desc:0 "Local chapters, campaign trains, and conservative outreach for the RECONQUETE movement."
+
+ ##########################################
+ # DECISIONS
+ ##########################################
+
+ GER_zem_broadcast_reconquete_speech:0 "Broadcast a RECONQUETE Speech"
+ GER_zem_broadcast_reconquete_speech_desc:0 "Air a polished Zemmour radio address. Costs political power, raises RECONQUETE support."
+
+ GER_zem_print_meme_posters:0 "Print Meme Posters"
+ GER_zem_print_meme_posters_desc:0 "Run another print run of mocking posters. Lowers fascist popularity at a small cost to public order."
+
+ GER_zem_hold_public_debate:0 "Hold a Public Debate"
+ GER_zem_hold_public_debate_desc:0 "Stage a major public debate. The result usually favours RECONQUETE, but a poor showing costs stability."
+
+ GER_zem_audit_local_party_office:0 "Audit a Fascist Local Office"
+ GER_zem_audit_local_party_office_desc:0 "Sic an auditor on a fascist local office. Lowers fascist popularity through scandal."
+
+ GER_zem_radio_rebuttal:0 "Radio Rebuttal"
+ GER_zem_radio_rebuttal_desc:0 "Run a 90-day rebuttal series on national radio that drives down fascist drift."
+
+ GER_zem_open_local_chapter:0 "Open a Local Chapter"
+ GER_zem_open_local_chapter_desc:0 "Found a new district chapter of RECONQUETE. Raises party popularity."
+
+ GER_zem_secure_municipality:0 "Secure a Municipality"
+ GER_zem_secure_municipality_desc:0 "Bring a town council into the RECONQUETE coalition. Stability and party popularity rise."
+
+ GER_zem_campaign_train_stop:0 "Campaign Train Stop"
+ GER_zem_campaign_train_stop_desc:0 "Run a campaign train stop in support of the referendum. Builds momentum for the plebiscite path."
+
+ GER_zem_conservative_negotiation:0 "Negotiate with Conservatives"
+ GER_zem_conservative_negotiation_desc:0 "Hold another quiet meeting with the conservative bloc. Builds momentum for the Grand Compromise."
+
+ GER_zem_public_order_operation:0 "Public Order Operation"
+ GER_zem_public_order_operation_desc:0 "Coordinated police and judicial action against extremist intimidation. No private armies, no theatrics."
+
+ ##########################################
+ # NEWS EVENTS — GER_zem_news.3 .. .9
+ ##########################################
+
+ GER_zem_news.3.t:0 "The Berlin Rally of RECONQUETE"
+ GER_zem_news.3.d:0 "A vast rally in Berlin has confirmed that RECONQUETE is no longer a tavern movement. Supporters filled the streets to hear Eric Zemmour denounce hysterical politics and promise a disciplined national future. Foreign press describe scenes that resemble a campaign rather than a putsch, and several embassies have requested transcripts."
+ GER_zem_news.3.a:0 "Remarkable."
+ GER_zem_news.3.b:0 "Germany is changing."
+
+ GER_zem_news.4.t:0 "A Vote of No Confidence Shakes Germany"
+ GER_zem_news.4.d:0 "Germany's political crisis has entered formal procedure as RECONQUETE forces a vote of no confidence. The result is uncertain, but Hitler's aura of inevitability has been punctured, and the world's chancelleries are reading the same dispatches at the same hour."
+ GER_zem_news.4.a:0 "Remarkable."
+ GER_zem_news.4.b:0 "We watch with interest."
+
+ GER_zem_news.5.t:0 "Zemmour Enters the Chancellery"
+ GER_zem_news.5.d:0 "After weeks of crisis, coalition pressure, and public mobilisation, Eric Zemmour has entered the Chancellery. Observers describe the moment as both absurd and historic, and the new government has already announced that its first three policies will be argued in public before they are signed."
+ GER_zem_news.5.a:0 "Remarkable."
+ GER_zem_news.5.b:0 "An astonishing turn."
+
+ GER_zem_news.6.t:0 "Germany Votes on RECONQUETE"
+ GER_zem_news.6.d:0 "Germany has held a referendum on the future of the state and the role of RECONQUETE. Across Europe, governments watch closely as ballots are counted, and the result will decide whether the new movement governs by mandate or by negotiated coalition."
+ GER_zem_news.6.a:0 "Remarkable."
+ GER_zem_news.6.b:0 "We await the count."
+
+ GER_zem_news.7.t:0 "Berlin Hosts a Conference of Calm"
+ GER_zem_news.7.d:0 "The new German government has hosted a European conference stressing diplomacy, trade, and political confidence rather than military adventure. France attends as a partner, not a target, and the closing communique is unusually short and unusually friendly."
+ GER_zem_news.7.a:0 "Remarkable."
+ GER_zem_news.7.b:0 "A welcome change of tone."
+
+ GER_zem_news.8.t:0 "The Second Tavern Speech"
+ GER_zem_news.8.d:0 "Eric Zemmour has returned to the tavern where his movement began, delivering a national broadcast that frames RECONQUETE as the movement that turned mockery into government. The speech ends with a quiet promise that the country will never again be ruled by men shouting from balconies."
+ GER_zem_news.8.a:0 "Remarkable."
+ GER_zem_news.8.b:0 "A historic broadcast."
+
+ GER_zem_news.9.t:0 "The Final Rebuttal"
+ GER_zem_news.9.d:0 "In a final national address, Zemmour declared that Germany had answered the politics of hysteria with one long rebuttal. Foreign observers remain cautious, but the internal transformation is undeniable, and the era of theatrical melodrama in Berlin appears, at last, to be ending."
+ GER_zem_news.9.a:0 "Remarkable."
+ GER_zem_news.9.b:0 "Europe takes note."
+
+ ##########################################
+ # COUNTRY EVENTS — GER_zem_country.1 .. .18
+ ##########################################
+
+ GER_zem_country.1.t:0 "The Barroom Network Expands"
+ GER_zem_country.1.d:0 "Reports from district organisers describe a sudden bloom of new tavern cells. Each one is small, each one is loud, and each one swears it founded the movement. Treasurers are torn between exasperation and pride, while local police forces have begun marking sympathetic taverns on internal maps."
+ GER_zem_country.1.a:0 "Channel the energy into proper organisation."
+ GER_zem_country.1.b:0 "Calm them down before the regime notices."
+
+ GER_zem_country.2.t:0 "Student Cells Demand Recognition"
+ GER_zem_country.2.d:0 "Student leaders insist on a formal seat at the next national congress. They have prepared three printed manifestos, two debate motions, and one extremely loud chant. The party leadership must decide whether to embrace the disorder or politely contain it."
+ GER_zem_country.2.a:0 "Welcome them in."
+ GER_zem_country.2.b:0 "Defer the question to a committee."
+
+ GER_zem_country.3.t:0 "The Empty Podium Goes Viral"
+ GER_zem_country.3.d:0 "Photographs of an empty fascist podium beside a full RECONQUETE one have been reproduced across the country. Children draw it in chalk, newspapers reprint it without commentary, and one provincial mayor allegedly hung it in his office."
+ GER_zem_country.3.a:0 "Encourage the spread."
+ GER_zem_country.3.b:0 "Move the moment forward, do not dwell on it."
+
+ GER_zem_country.4.t:0 "A Conservative Delegation Arrives"
+ GER_zem_country.4.d:0 "A delegation of grey-suited conservatives has requested an audience. They dislike Hitler's chaos, distrust RECONQUETE's youth, and would very much like a guarantee of stability. They have brought tea, lawyers, and a list of conditions."
+ GER_zem_country.4.a:0 "Offer firm guarantees."
+ GER_zem_country.4.b:0 "Promise nothing in writing."
+
+ GER_zem_country.5.t:0 "Industrialists Ask for Stability"
+ GER_zem_country.5.d:0 "A group of leading industrialists request a private meeting. Their factories are tired of street politics. They ask only that revolutions be conducted on a predictable schedule and ideally not during shift changes."
+ GER_zem_country.5.a:0 "Promise predictability."
+ GER_zem_country.5.b:0 "Welcome their funding without binding promises."
+
+ GER_zem_country.6.t:0 "Army Officers Request Guarantees"
+ GER_zem_country.6.d:0 "Senior officers want assurances that the new movement will not turn the army into a propaganda squad. They are willing to listen, provided the conversation includes budgets, postings, and a polite end to amateur military rhetoric."
+ GER_zem_country.6.a:0 "Reassure them at length."
+ GER_zem_country.6.b:0 "Offer political concessions instead."
+
+ GER_zem_country.7.t:0 "The Referendum Campaign Begins"
+ GER_zem_country.7.d:0 "Posters, trains, microphones, and pamphlets are deployed across the country. The campaign theme is simple: ballots over brawlers. Local organisers are exhausted within a week and energised within two."
+ GER_zem_country.7.a:0 "Press the campaign at full intensity."
+
+ GER_zem_country.8.t:0 "Referendum Night"
+ GER_zem_country.8.d:0 "The ballots are counted under the careful eyes of clerks, observers, and a great many cigarettes. A nation waits while microphones hum gently in the background. The result will define the rest of the political tree, and possibly the rest of the decade."
+ GER_zem_country.8.a:0 "RECONQUETE has won a clear mandate."
+ GER_zem_country.8.b:0 "RECONQUETE has won enough for a coalition."
+ GER_zem_country.8.c:0 "The result is too close; we must regroup."
+
+ GER_zem_country.9.t:0 "A Failed Fascist Counter-Rally"
+ GER_zem_country.9.d:0 "An attempted fascist counter-rally has fizzled into hecklers, rain, and one unscheduled debate. The footage circulates faster than the rally itself ever could, and the regime's organisers are reportedly furious with one another."
+ GER_zem_country.9.a:0 "Let the footage speak for itself."
+
+ GER_zem_country.10.t:0 "The Second Tavern Speech Preparations"
+ GER_zem_country.10.d:0 "The original tavern is being rebooked for a national broadcast. Microphones are tested, loyal regulars are seated in carefully spontaneous positions, and the speech itself is rehearsed twice while pretending to be improvised."
+ GER_zem_country.10.a:0 "Make it as polished as possible."
+ GER_zem_country.10.b:0 "Keep it raw and rough on purpose."
+
+ GER_zem_country.11.t:0 "The Moustache Pamphlet Scandal"
+ GER_zem_country.11.d:0 "A satirical pamphlet about facial hair has provoked an absurd scandal. Officials demand it be banned. Banning it triples its circulation. Ministers receive private copies marked, with great formality, as evidence."
+ GER_zem_country.11.a:0 "Defend the right to mock."
+ GER_zem_country.11.b:0 "Distance the party from the joke."
+
+ GER_zem_country.12.t:0 "The Audit of the Rallies"
+ GER_zem_country.12.d:0 "Auditors reviewing old rally invoices have discovered absurd expenses, suspicious contracts, and entirely too much money spent on stage lighting. Several names are quietly noted in margins, and the published summary becomes the country's most-discussed financial document of the year."
+ GER_zem_country.12.a:0 "Publish the full report."
+
+ GER_zem_country.13.t:0 "Local Elections Return"
+ GER_zem_country.13.d:0 "The first round of restored municipal elections has begun. Booths are calm, observers are bored, and the regime's old organisers are visibly out of practice. RECONQUETE candidates are everywhere, and so are the leaflets explaining what a ballot does."
+ GER_zem_country.13.a:0 "Press for clean turnout."
+ GER_zem_country.13.b:0 "Use the moment for a stability campaign."
+
+ GER_zem_country.14.t:0 "The Monarchist Conversation"
+ GER_zem_country.14.d:0 "A small conservative faction has proposed a symbolic monarchy. They are perfectly polite, perfectly serious, and perfectly aware that the answer is most likely no. They request only that the conversation be permitted to occur in public."
+ GER_zem_country.14.a:0 "Permit the conversation, refuse the substance."
+ GER_zem_country.14.b:0 "Keep them inside the coalition with vague gestures."
+
+ GER_zem_country.15.t:0 "The Legal End of the Cult"
+ GER_zem_country.15.d:0 "Courts have begun the slow, methodical work of dismantling the institutional privileges of the old cult. There is no fanfare, no executions, and no theatrical revenge — only paperwork, hearings, and the steady extinguishing of an aura. It is, somehow, more devastating than any purge."
+ GER_zem_country.15.a:0 "Let the law do its quiet work."
+
+ GER_zem_country.16.t:0 "Foreign Diplomats Ask About France"
+ GER_zem_country.16.d:0 "Several foreign embassies have asked, with diplomatic delicacy, what the new German government intends regarding France. The answer is short and unusual for Berlin in this decade: France is a neighbour, not a target, and any hint of the contrary would be loudly contradicted by Zemmour himself."
+ GER_zem_country.16.a:0 "Issue a public guarantee of peaceful relations."
+ GER_zem_country.16.b:0 "Acknowledge the question without elaborating."
+
+ GER_zem_country.17.t:0 "Radio to the World"
+ GER_zem_country.17.d:0 "International broadcasts present the new political turn to foreign capitals. Cautious analyses run on the BBC, polite editorials appear in Le Temps, and an unusually friendly note arrives from Stockholm. The international system has noticed that Berlin has stopped shouting."
+ GER_zem_country.17.a:0 "Continue the broadcasts at full strength."
+
+ GER_zem_country.18.t:0 "The Final Rebuttal"
+ GER_zem_country.18.d:0 "All preparations are complete. The microphones are ready, the speech is finished, and dawn approaches over Berlin. Zemmour will address the country one last time before the broadcast becomes history. Whatever else the regime did, it was forced to listen."
+ GER_zem_country.18.a:0 "Deliver the final rebuttal."
+

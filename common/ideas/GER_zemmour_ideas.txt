@@ -1,0 +1,397 @@
+###########################################################
+# Eric Zemmour / RECONQUETE expansion — ideas & national
+# spirits used by the new political tree.
+#
+# RECONQUETE backend is the neutrality ideology slot, so any
+# "RECONQUETE drift" effect below is expressed as
+# neutrality_drift in script.
+###########################################################
+
+ideas = {
+
+	country = {
+
+		##########################################
+		# Permanent / long-running national spirits
+		##########################################
+
+		GER_zem_reconquete_rising = {
+			picture = generic_propaganda
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				neutrality_drift = 0.02
+				political_power_factor = 0.05
+			}
+		}
+
+		GER_zem_barroom_network_idea = {
+			picture = generic_propaganda
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				neutrality_drift = 0.02
+				stability_factor = -0.01
+			}
+		}
+
+		GER_zem_trained_street_orators = {
+			picture = generic_propaganda
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.05
+				stability_factor = 0.01
+			}
+		}
+
+		GER_zem_local_chapters_idea = {
+			picture = generic_propaganda
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				neutrality_drift = 0.01
+				weekly_manpower = 250
+				stability_factor = 0.01
+			}
+		}
+
+		GER_zem_public_order_without_thugs_idea = {
+			picture = generic_propaganda
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = -0.02
+			}
+		}
+
+		GER_zem_cabinet_of_reconquest = {
+			picture = generic_propaganda
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.10
+				stability_factor = 0.03
+				political_advisor_cost_factor = -0.10
+			}
+		}
+
+		GER_zem_orator_ministers_idea = {
+			picture = generic_propaganda
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.05
+				stability_factor = 0.02
+			}
+		}
+
+		GER_zem_constitutional_guardrails_idea = {
+			picture = generic_propaganda
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				drift_defence_factor = 0.10
+			}
+		}
+
+		GER_zem_grand_compromise_idea = {
+			picture = generic_propaganda
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.07
+				consumer_goods_factor = -0.01
+			}
+		}
+
+		GER_zem_public_broadcasting_charter_idea = {
+			picture = generic_propaganda
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.01
+				stability_factor = 0.02
+				neutrality_drift = 0.02
+			}
+		}
+
+		GER_zem_zemmourist_state = {
+			picture = generic_propaganda
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.10
+				political_power_gain = 0.15
+				drift_defence_factor = 0.15
+				fascism_drift = -0.02
+			}
+		}
+
+		##########################################
+		# Timed ideas (added with add_timed_idea)
+		##########################################
+
+		GER_zem_student_cells_idea = {
+			picture = generic_propaganda
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.01
+			}
+		}
+
+		GER_zem_friendly_press_idea = {
+			picture = generic_propaganda
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				fascism_drift = -0.03
+			}
+		}
+
+		GER_zem_radio_hour_idea = {
+			picture = generic_propaganda
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				neutrality_drift = 0.03
+			}
+		}
+
+		GER_zem_old_party_split_idea = {
+			picture = generic_propaganda
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				fascism_drift = -0.04
+			}
+		}
+
+		GER_zem_humiliated_propagandists = {
+			picture = generic_propaganda
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				fascism_drift = -0.03
+			}
+		}
+
+		GER_zem_moustache_pamphlet_idea = {
+			picture = generic_propaganda
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				fascism_drift = -0.02
+			}
+		}
+
+		GER_zem_isolate_loyalists_idea = {
+			picture = generic_propaganda
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				fascism_drift = -0.05
+				stability_factor = 0.01
+			}
+		}
+
+		GER_zem_ministry_of_argument_idea = {
+			picture = generic_propaganda
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.03
+				stability_factor = 0.02
+				political_advisor_cost_factor = -0.10
+			}
+		}
+
+		GER_zem_civil_service_reform_idea = {
+			picture = generic_propaganda
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.02
+				stability_factor = 0.05
+			}
+		}
+
+		GER_zem_industrial_pact_idea = {
+			picture = generic_propaganda
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.03
+			}
+		}
+
+		GER_zem_prussian_admin_idea = {
+			picture = generic_propaganda
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				production_factory_max_efficiency_factor = 0.02
+				stability_factor = 0.01
+			}
+		}
+
+		GER_zem_campaign_trains_idea = {
+			picture = generic_propaganda
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				neutrality_drift = 0.04
+			}
+		}
+
+		GER_zem_republic_of_rebuttals_idea = {
+			picture = generic_propaganda
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.02
+				stability_factor = 0.02
+			}
+		}
+
+		GER_zem_trade_over_tantrums_idea = {
+			picture = generic_propaganda
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				civilian_factory_use = -1
+				production_speed_industrial_complex_factor = 0.03
+				trade_opinion_factor = 0.20
+			}
+		}
+
+		GER_zem_anti_communist_argument_idea = {
+			picture = generic_propaganda
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				communism_drift = -0.02
+				stability_factor = 0.01
+			}
+		}
+
+		GER_zem_defensive_posture_idea = {
+			picture = generic_propaganda
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				production_speed_bunker_factor = 0.03
+				stability_factor = 0.02
+			}
+		}
+
+		GER_zem_civic_discipline_idea = {
+			picture = generic_propaganda
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				consumer_goods_factor = -0.01
+			}
+		}
+
+		GER_zem_courts_against_cults_idea = {
+			picture = generic_propaganda
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				fascism_drift = -0.03
+				stability_factor = 0.02
+			}
+		}
+
+		GER_zem_economic_seriousness_idea = {
+			picture = generic_propaganda
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				production_speed_industrial_complex_factor = 0.04
+				stability_factor = 0.02
+			}
+		}
+
+		GER_zem_workers_argue_back_idea = {
+			picture = generic_propaganda
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.02
+				stability_factor = 0.02
+				communism_drift = -0.01
+			}
+		}
+
+		GER_zem_small_business_idea = {
+			picture = generic_propaganda
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.02
+			}
+		}
+
+		GER_zem_housing_idea = {
+			picture = generic_propaganda
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.04
+				production_speed_infrastructure_factor = 0.02
+			}
+		}
+
+		GER_zem_culture_of_debate_idea = {
+			picture = generic_propaganda
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.02
+				stability_factor = 0.02
+			}
+		}
+
+	}
+
+}
