@@ -1,0 +1,21 @@
+###########################################################
+# Opinion modifiers for the German rework expansion.
+# Used by the foreign-policy capstones to express peaceful
+# diplomacy with neighbours (including France).
+###########################################################
+
+opinion_modifiers = {
+
+	GER_zem_peaceful_neighbor = {
+		value = 30
+		decay = 0.5
+		days = 730
+	}
+
+	GER_zem_non_aggression = {
+		value = 50
+		decay = 0.25
+		days = 1825
+	}
+
+}

@@ -1,0 +1,150 @@
+###########################################################
+# RECONQUETE expansion — world news events.
+#
+# News events 1 and 2 are kept under the existing ger_news
+# namespace (events/german_rework_news.txt) because vanilla
+# focus completion rewards already reference them. The new
+# news events live under the GER_zem_news namespace.
+###########################################################
+
+add_namespace = GER_zem_news
+
+# 3 — The Berlin Rally of RECONQUETE.
+news_event = {
+	id = GER_zem_news.3
+	title = GER_zem_news.3.t
+	desc = GER_zem_news.3.d
+	picture = GFX_news_event_zem_berlin_rally
+
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = GER_zem_news.3.a
+		trigger = { tag = GER }
+	}
+	option = {
+		name = GER_zem_news.3.b
+		trigger = { NOT = { tag = GER } }
+	}
+}
+
+# 4 — A Vote of No Confidence Shakes Germany.
+news_event = {
+	id = GER_zem_news.4
+	title = GER_zem_news.4.t
+	desc = GER_zem_news.4.d
+	picture = GFX_news_event_zem_no_confidence
+
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = GER_zem_news.4.a
+		trigger = { tag = GER }
+	}
+	option = {
+		name = GER_zem_news.4.b
+		trigger = { NOT = { tag = GER } }
+	}
+}
+
+# 5 — Zemmour Enters the Chancellery.
+news_event = {
+	id = GER_zem_news.5
+	title = GER_zem_news.5.t
+	desc = GER_zem_news.5.d
+	picture = GFX_news_event_zem_chancellery
+
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = GER_zem_news.5.a
+		trigger = { tag = GER }
+	}
+	option = {
+		name = GER_zem_news.5.b
+		trigger = { NOT = { tag = GER } }
+	}
+}
+
+# 6 — Germany Votes on RECONQUETE.
+news_event = {
+	id = GER_zem_news.6
+	title = GER_zem_news.6.t
+	desc = GER_zem_news.6.d
+	picture = GFX_news_event_zem_referendum
+
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = GER_zem_news.6.a
+		trigger = { tag = GER }
+	}
+	option = {
+		name = GER_zem_news.6.b
+		trigger = { NOT = { tag = GER } }
+	}
+}
+
+# 7 — Berlin Hosts a Conference of Calm.
+news_event = {
+	id = GER_zem_news.7
+	title = GER_zem_news.7.t
+	desc = GER_zem_news.7.d
+	picture = GFX_news_event_zem_conference
+
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = GER_zem_news.7.a
+		trigger = { tag = GER }
+	}
+	option = {
+		name = GER_zem_news.7.b
+		trigger = { NOT = { tag = GER } }
+	}
+}
+
+# 8 — The Second Tavern Speech.
+news_event = {
+	id = GER_zem_news.8
+	title = GER_zem_news.8.t
+	desc = GER_zem_news.8.d
+	picture = GFX_news_event_zem_second_tavern
+
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = GER_zem_news.8.a
+		trigger = { tag = GER }
+	}
+	option = {
+		name = GER_zem_news.8.b
+		trigger = { NOT = { tag = GER } }
+	}
+}
+
+# 9 — The Final Rebuttal.
+news_event = {
+	id = GER_zem_news.9
+	title = GER_zem_news.9.t
+	desc = GER_zem_news.9.d
+	picture = GFX_news_event_zem_final_rebuttal
+
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = GER_zem_news.9.a
+		trigger = { tag = GER }
+	}
+	option = {
+		name = GER_zem_news.9.b
+		trigger = { NOT = { tag = GER } }
+	}
+}

@@ -1,0 +1,174 @@
+###########################################################
+# Sprite registrations for the RECONQUETE expansion.
+#
+# Until real artwork is provided, the new news-event and
+# country-event pictures point to small placeholder PNGs.
+# Replace the .png files with proper artwork — no need to
+# edit this .gfx file.
+#
+# Image generation prompts for replacement art are stored
+# next to each registration as a comment beginning with
+# `create an image of`.
+###########################################################
+
+spriteTypes = {
+
+	###################
+	# News event pictures (3..9)
+	###################
+
+	# create an image of a huge peaceful RECONQUETE rally in 1930s Berlin with banners, dramatic lights, and vintage microphones, HOI4 news event style
+	spriteType = {
+		name = "GFX_news_event_zem_berlin_rally"
+		texturefile = "gfx/event_pictures/zem_berlin_rally.png"
+	}
+
+	# create an image of a tense 1930s parliamentary chamber during a no-confidence vote, HOI4 news event style
+	spriteType = {
+		name = "GFX_news_event_zem_no_confidence"
+		texturefile = "gfx/event_pictures/zem_no_confidence.png"
+	}
+
+	# create an image of Eric Zemmour entering the German chancellery in a dark suit as officials watch, HOI4 news event style
+	spriteType = {
+		name = "GFX_news_event_zem_chancellery"
+		texturefile = "gfx/event_pictures/zem_chancellery.png"
+	}
+
+	# create an image of a national referendum vote count in 1930s Germany, ballot boxes, tense clerks, HOI4 news event style
+	spriteType = {
+		name = "GFX_news_event_zem_referendum"
+		texturefile = "gfx/event_pictures/zem_referendum.png"
+	}
+
+	# create an image of a peaceful European diplomatic conference in Berlin with delegates and flags, including France as a partner not a target, HOI4 news event style
+	spriteType = {
+		name = "GFX_news_event_zem_conference"
+		texturefile = "gfx/event_pictures/zem_conference.png"
+	}
+
+	# create an image of Eric Zemmour giving a nationwide radio speech from a crowded tavern where his movement began, HOI4 news event style
+	spriteType = {
+		name = "GFX_news_event_zem_second_tavern"
+		texturefile = "gfx/event_pictures/zem_second_tavern.png"
+	}
+
+	# create an image of a dramatic final radio address before vintage microphones with dawn over Berlin, HOI4 news event style
+	spriteType = {
+		name = "GFX_news_event_zem_final_rebuttal"
+		texturefile = "gfx/event_pictures/zem_final_rebuttal.png"
+	}
+
+	###################
+	# Country event report pictures
+	###################
+
+	# create an image of a smoky 1930s German tavern with a political organising table, HOI4 report event style
+	spriteType = {
+		name = "GFX_report_event_zem_barroom"
+		texturefile = "gfx/event_pictures/zem_barroom.png"
+	}
+
+	# create an image of 1930s German students rallying with RECONQUETE pamphlets, HOI4 report event style
+	spriteType = {
+		name = "GFX_report_event_zem_students"
+		texturefile = "gfx/event_pictures/zem_students.png"
+	}
+
+	# create an image of a debate stage with one speaker and one empty podium under harsh lights, HOI4 report event style
+	spriteType = {
+		name = "GFX_report_event_zem_empty_podium"
+		texturefile = "gfx/event_pictures/zem_empty_podium.png"
+	}
+
+	# create an image of a conservative German delegation arriving at the party headquarters, HOI4 report event style
+	spriteType = {
+		name = "GFX_report_event_zem_conservatives"
+		texturefile = "gfx/event_pictures/zem_conservatives.png"
+	}
+
+	# create an image of 1930s industrialists meeting Zemmourist politicians in a factory office, HOI4 report event style
+	spriteType = {
+		name = "GFX_report_event_zem_industrialists"
+		texturefile = "gfx/event_pictures/zem_industrialists.png"
+	}
+
+	# create an image of German army officers in formal briefing with civilian ministers, HOI4 report event style
+	spriteType = {
+		name = "GFX_report_event_zem_officers"
+		texturefile = "gfx/event_pictures/zem_officers.png"
+	}
+
+	# create an image of a referendum campaign rally with banners and ballot boxes, HOI4 report event style
+	spriteType = {
+		name = "GFX_report_event_zem_referendum_start"
+		texturefile = "gfx/event_pictures/zem_referendum_start.png"
+	}
+
+	# create an image of a tense night-time referendum vote count, HOI4 report event style
+	spriteType = {
+		name = "GFX_report_event_zem_referendum_night"
+		texturefile = "gfx/event_pictures/zem_referendum_night.png"
+	}
+
+	# create an image of a small fascist counter-rally fizzling out under heckling crowds, HOI4 report event style, no gore
+	spriteType = {
+		name = "GFX_report_event_zem_failed_rally"
+		texturefile = "gfx/event_pictures/zem_failed_rally.png"
+	}
+
+	# create an image of preparations for a major political broadcast in a 1930s tavern, HOI4 report event style
+	spriteType = {
+		name = "GFX_report_event_zem_second_tavern_prep"
+		texturefile = "gfx/event_pictures/zem_second_tavern_prep.png"
+	}
+
+	# create an image of satirical political pamphlets on a desk, no real insignia, HOI4 report event style
+	spriteType = {
+		name = "GFX_report_event_zem_moustache"
+		texturefile = "gfx/event_pictures/zem_moustache.png"
+	}
+
+	# create an image of accountants auditing rally invoices, HOI4 report event style
+	spriteType = {
+		name = "GFX_report_event_zem_audit"
+		texturefile = "gfx/event_pictures/zem_audit.png"
+	}
+
+	# create an image of local election booths in 1930s Germany with calm voters, HOI4 report event style
+	spriteType = {
+		name = "GFX_report_event_zem_local_elections"
+		texturefile = "gfx/event_pictures/zem_local_elections.png"
+	}
+
+	# create an image of a quiet meeting with monarchist symbols and republican documents, HOI4 report event style
+	spriteType = {
+		name = "GFX_report_event_zem_monarchist"
+		texturefile = "gfx/event_pictures/zem_monarchist.png"
+	}
+
+	# create an image of a judge dismantling extremist party privileges in a courtroom, HOI4 report event style
+	spriteType = {
+		name = "GFX_report_event_zem_legal_end"
+		texturefile = "gfx/event_pictures/zem_legal_end.png"
+	}
+
+	# create an image of foreign diplomats discussing France in a Berlin meeting room, HOI4 report event style
+	spriteType = {
+		name = "GFX_report_event_zem_diplomats"
+		texturefile = "gfx/event_pictures/zem_diplomats.png"
+	}
+
+	# create an image of a powerful radio tower broadcasting peaceful messages across Europe, HOI4 report event style
+	spriteType = {
+		name = "GFX_report_event_zem_radio_world"
+		texturefile = "gfx/event_pictures/zem_radio_world.png"
+	}
+
+	# create an image of a dramatic final radio address with dawn over Berlin, HOI4 report event style
+	spriteType = {
+		name = "GFX_report_event_zem_final_rebuttal"
+		texturefile = "gfx/event_pictures/zem_final_rebuttal_report.png"
+	}
+
+}

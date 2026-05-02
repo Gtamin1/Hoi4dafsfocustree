@@ -1,0 +1,371 @@
+###########################################################
+# RECONQUETE expansion — country events.
+#
+# Internal political flavor and branch consequences.
+# None of these events create hostile actions against
+# France or any other country.
+###########################################################
+
+add_namespace = GER_zem_country
+
+# 1 — The Barroom Network Expands.
+country_event = {
+	id = GER_zem_country.1
+	title = GER_zem_country.1.t
+	desc = GER_zem_country.1.d
+	picture = GFX_report_event_zem_barroom
+
+	is_triggered_only = yes
+
+	option = {
+		name = GER_zem_country.1.a
+		add_political_power = 25
+		add_popularity = { ideology = neutrality popularity = 0.01 }
+	}
+	option = {
+		name = GER_zem_country.1.b
+		add_stability = 0.01
+	}
+}
+
+# 2 — Student Cells Demand Recognition.
+country_event = {
+	id = GER_zem_country.2
+	title = GER_zem_country.2.t
+	desc = GER_zem_country.2.d
+	picture = GFX_report_event_zem_students
+
+	is_triggered_only = yes
+
+	option = {
+		name = GER_zem_country.2.a
+		add_popularity = { ideology = neutrality popularity = 0.02 }
+		add_stability = -0.01
+	}
+	option = {
+		name = GER_zem_country.2.b
+		add_political_power = 25
+	}
+}
+
+# 3 — The Empty Podium Goes Viral.
+country_event = {
+	id = GER_zem_country.3
+	title = GER_zem_country.3.t
+	desc = GER_zem_country.3.d
+	picture = GFX_report_event_zem_empty_podium
+
+	is_triggered_only = yes
+
+	option = {
+		name = GER_zem_country.3.a
+		add_popularity = { ideology = fascism popularity = -0.02 }
+		add_political_power = 25
+	}
+	option = {
+		name = GER_zem_country.3.b
+		add_stability = 0.01
+	}
+}
+
+# 4 — A Conservative Delegation Arrives.
+country_event = {
+	id = GER_zem_country.4
+	title = GER_zem_country.4.t
+	desc = GER_zem_country.4.d
+	picture = GFX_report_event_zem_conservatives
+
+	is_triggered_only = yes
+
+	option = {
+		name = GER_zem_country.4.a
+		add_stability = 0.02
+		add_political_power = 25
+	}
+	option = {
+		name = GER_zem_country.4.b
+		add_popularity = { ideology = neutrality popularity = 0.01 }
+	}
+}
+
+# 5 — Industrialists Ask for Stability.
+country_event = {
+	id = GER_zem_country.5
+	title = GER_zem_country.5.t
+	desc = GER_zem_country.5.d
+	picture = GFX_report_event_zem_industrialists
+
+	is_triggered_only = yes
+
+	option = {
+		name = GER_zem_country.5.a
+		add_stability = 0.02
+		add_political_power = 25
+	}
+	option = {
+		name = GER_zem_country.5.b
+		add_popularity = { ideology = neutrality popularity = 0.01 }
+	}
+}
+
+# 6 — Army Officers Request Guarantees.
+country_event = {
+	id = GER_zem_country.6
+	title = GER_zem_country.6.t
+	desc = GER_zem_country.6.d
+	picture = GFX_report_event_zem_officers
+
+	is_triggered_only = yes
+
+	option = {
+		name = GER_zem_country.6.a
+		add_stability = 0.03
+		army_experience = 5
+	}
+	option = {
+		name = GER_zem_country.6.b
+		add_political_power = 25
+	}
+}
+
+# 7 — The Referendum Campaign Begins.
+country_event = {
+	id = GER_zem_country.7
+	title = GER_zem_country.7.t
+	desc = GER_zem_country.7.d
+	picture = GFX_report_event_zem_referendum_start
+
+	is_triggered_only = yes
+
+	option = {
+		name = GER_zem_country.7.a
+		add_popularity = { ideology = neutrality popularity = 0.02 }
+		add_stability = -0.01
+	}
+}
+
+# 8 — Referendum Night.
+country_event = {
+	id = GER_zem_country.8
+	title = GER_zem_country.8.t
+	desc = GER_zem_country.8.d
+	picture = GFX_report_event_zem_referendum_night
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { neutrality > 0.40 }
+				set_country_flag = GER_zem_referendum_won
+			}
+			else_if = {
+				limit = { neutrality > 0.25 }
+				set_country_flag = GER_zem_referendum_partial
+			}
+		}
+	}
+
+	option = {
+		name = GER_zem_country.8.a
+		trigger = { has_country_flag = GER_zem_referendum_won }
+		add_stability = 0.05
+		add_popularity = { ideology = neutrality popularity = 0.05 }
+	}
+	option = {
+		name = GER_zem_country.8.b
+		trigger = { has_country_flag = GER_zem_referendum_partial }
+		add_stability = 0.02
+		add_popularity = { ideology = neutrality popularity = 0.02 }
+	}
+	option = {
+		name = GER_zem_country.8.c
+		trigger = {
+			NOT = { has_country_flag = GER_zem_referendum_won }
+			NOT = { has_country_flag = GER_zem_referendum_partial }
+		}
+		add_stability = -0.02
+		add_political_power = 50
+	}
+}
+
+# 9 — A Failed Fascist Counter-Rally.
+country_event = {
+	id = GER_zem_country.9
+	title = GER_zem_country.9.t
+	desc = GER_zem_country.9.d
+	picture = GFX_report_event_zem_failed_rally
+
+	is_triggered_only = yes
+
+	option = {
+		name = GER_zem_country.9.a
+		add_popularity = { ideology = fascism popularity = -0.02 }
+		add_political_power = 25
+	}
+}
+
+# 10 — The Second Tavern Speech Preparations.
+country_event = {
+	id = GER_zem_country.10
+	title = GER_zem_country.10.t
+	desc = GER_zem_country.10.d
+	picture = GFX_report_event_zem_second_tavern_prep
+
+	is_triggered_only = yes
+
+	option = {
+		name = GER_zem_country.10.a
+		add_political_power = 50
+		add_stability = 0.02
+	}
+	option = {
+		name = GER_zem_country.10.b
+		add_popularity = { ideology = neutrality popularity = 0.02 }
+	}
+}
+
+# 11 — The Moustache Pamphlet Scandal.
+country_event = {
+	id = GER_zem_country.11
+	title = GER_zem_country.11.t
+	desc = GER_zem_country.11.d
+	picture = GFX_report_event_zem_moustache
+
+	is_triggered_only = yes
+
+	option = {
+		name = GER_zem_country.11.a
+		add_popularity = { ideology = fascism popularity = -0.01 }
+		add_political_power = 15
+	}
+	option = {
+		name = GER_zem_country.11.b
+		add_stability = 0.01
+	}
+}
+
+# 12 — The Audit of the Rallies.
+country_event = {
+	id = GER_zem_country.12
+	title = GER_zem_country.12.t
+	desc = GER_zem_country.12.d
+	picture = GFX_report_event_zem_audit
+
+	is_triggered_only = yes
+
+	option = {
+		name = GER_zem_country.12.a
+		add_popularity = { ideology = fascism popularity = -0.015 }
+		add_political_power = 25
+	}
+}
+
+# 13 — Local Elections Return.
+country_event = {
+	id = GER_zem_country.13
+	title = GER_zem_country.13.t
+	desc = GER_zem_country.13.d
+	picture = GFX_report_event_zem_local_elections
+
+	is_triggered_only = yes
+
+	option = {
+		name = GER_zem_country.13.a
+		add_popularity = { ideology = neutrality popularity = 0.02 }
+		add_stability = 0.02
+	}
+	option = {
+		name = GER_zem_country.13.b
+		add_stability = 0.03
+	}
+}
+
+# 14 — The Monarchist Conversation.
+country_event = {
+	id = GER_zem_country.14
+	title = GER_zem_country.14.t
+	desc = GER_zem_country.14.d
+	picture = GFX_report_event_zem_monarchist
+
+	is_triggered_only = yes
+
+	option = {
+		name = GER_zem_country.14.a
+		add_stability = 0.02
+		add_political_power = 25
+	}
+	option = {
+		name = GER_zem_country.14.b
+		add_stability = 0.01
+		add_popularity = { ideology = neutrality popularity = 0.01 }
+	}
+}
+
+# 15 — The Legal End of the Cult.
+country_event = {
+	id = GER_zem_country.15
+	title = GER_zem_country.15.t
+	desc = GER_zem_country.15.d
+	picture = GFX_report_event_zem_legal_end
+
+	is_triggered_only = yes
+
+	option = {
+		name = GER_zem_country.15.a
+		add_popularity = { ideology = fascism popularity = -0.04 }
+		add_stability = 0.03
+	}
+}
+
+# 16 — Foreign Diplomats Ask About France.
+country_event = {
+	id = GER_zem_country.16
+	title = GER_zem_country.16.t
+	desc = GER_zem_country.16.d
+	picture = GFX_report_event_zem_diplomats
+
+	is_triggered_only = yes
+
+	option = {
+		name = GER_zem_country.16.a
+		add_opinion_modifier = { target = FRA modifier = GER_zem_peaceful_neighbor }
+		add_political_power = 25
+	}
+	option = {
+		name = GER_zem_country.16.b
+		add_political_power = 15
+	}
+}
+
+# 17 — Radio to the World.
+country_event = {
+	id = GER_zem_country.17
+	title = GER_zem_country.17.t
+	desc = GER_zem_country.17.d
+	picture = GFX_report_event_zem_radio_world
+
+	is_triggered_only = yes
+
+	option = {
+		name = GER_zem_country.17.a
+		add_stability = 0.02
+		add_political_power = 50
+	}
+}
+
+# 18 — The Final Rebuttal.
+country_event = {
+	id = GER_zem_country.18
+	title = GER_zem_country.18.t
+	desc = GER_zem_country.18.d
+	picture = GFX_report_event_zem_final_rebuttal
+
+	is_triggered_only = yes
+
+	option = {
+		name = GER_zem_country.18.a
+		add_stability = 0.05
+		add_political_power = 100
+	}
+}

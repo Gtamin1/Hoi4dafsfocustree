@@ -1,0 +1,17 @@
+###########################################################
+# Decision categories for the RECONQUETE expansion.
+###########################################################
+
+GER_zem_propaganda_category = {
+	icon = generic_political_actions
+	allowed = { tag = GER }
+	visible = { has_country_flag = GER_reconquete_founded }
+	priority = 100
+}
+
+GER_zem_organization_category = {
+	icon = generic_political_actions
+	allowed = { tag = GER }
+	visible = { has_country_flag = GER_reconquete_founded }
+	priority = 95
+}

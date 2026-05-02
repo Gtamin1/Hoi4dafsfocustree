@@ -1,31 +1,45 @@
 ###########################################################
-# German Rework — replaces the vanilla Germany focus tree.
+# German Rework — Eric Zemmour / RECONQUETE political tree.
 #
-# This file lives at common/national_focus/germany.txt so that
-# it overrides the vanilla file of the same name. The new tree
-# below is the one shown to GER from now on.
+# This file lives at common/national_focus/germany.txt and
+# overrides the vanilla file of the same name. It contains
+# one focus tree (id = german_focus, the same id used by the
+# vanilla scripts for GER) so vanilla decisions/events that
+# call load_focus_tree = german_focus keep working.
 #
-# Branches implemented:
-#   - Political (GER_open_political_sphere -> GER_a_new_hero
-#                -> GER_epic_zemmour_anti_adolf_moment)
+# Branches:
+#   - Trunk: Open Political Sphere -> A New Hero ->
+#            Epic Zemmour Anti Adolf Moment
+#   - A. Movement Building   (left,        x = 0..3)
+#   - B. Anti-Hitler Political Offensive (x = 4..5)
+#   - C. RECONQUETE Government Path      (x = 7..9)
+#   - D. Conservative Coalition          (x = 10..13)
+#   - E. Constitutional / Referendum     (x = 14..17)
+#   - F. Foreign Policy   (peace, no France war, y = 10..12)
+#   - G. Internal Reform                  (y = 10..13)
+#   - H. Domestic Policy                  (y = 10..13)
+#   - I. Capstones                        (y = 14..16)
 #
-# Other branches (industry, military, diplomacy, war) are
-# intentionally left empty for now and can be slotted in by
-# adding more `focus = { ... }` entries to this same tree.
+# RECONQUETE is implemented on top of the neutrality slot
+# (renamed via set_party_name in "A New Hero"). Anywhere we
+# refer to RECONQUETE popularity in script we operate on
+# the neutrality ideology.
+#
+# ------------------------------------------------------------
+# NO-FRANCE-ATTACK RULE:
+# No focus in this tree creates a war goal, claim, puppet,
+# annexation, occupation, or hostile event chain against
+# France. France only appears as a peaceful neighbor in the
+# Foreign Policy branch.
+# ------------------------------------------------------------
 ###########################################################
 
-# NOTE: id is intentionally `german_focus` — the same id as the
-# vanilla German tree. Vanilla scripts (decisions, events, civil-war
-# triggers) call `load_focus_tree = german_focus` and would break if
-# we renamed it.
 focus_tree = {
 	id = german_focus
 	country = {
 		factor = 0
 		modifier = {
-			# High enough to beat every vanilla and DLC German focus
-			# tree (Götterdämmerung, NSB, etc., which ship their own
-			# trees with their own picker weights).
+			# High enough to beat every vanilla and DLC German focus tree.
 			add = 9999
 			tag = GER
 		}
@@ -35,15 +49,16 @@ focus_tree = {
 	initial_show_position = { focus = GER_open_political_sphere }
 
 	#######################################
-	# POLITICAL BRANCH
+	# TRUNK
 	#######################################
 
 	focus = {
 		id = GER_open_political_sphere
 		icon = GFX_goal_generic_demand_territory
-		x = 6
+		x = 8
 		y = 0
-		cost = 5  # 5 * 7 = 35 days
+		cost = 5
+		available_if_capitulated = no
 
 		ai_will_do = { factor = 10 }
 
@@ -58,7 +73,8 @@ focus_tree = {
 		relative_position_id = GER_open_political_sphere
 		x = 0
 		y = 1
-		cost = 10  # 10 * 7 = 70 days
+		cost = 10
+		available_if_capitulated = no
 
 		prerequisite = { focus = GER_open_political_sphere }
 
@@ -67,19 +83,11 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 50
 
-			# Found RECONQUETE: rename the neutrality slot, install
-			# Eric Zemmour as its leader, and grant a permanent
-			# daily neutrality (RECONQUETE) drift idea.
 			set_party_name = {
 				ideology = neutrality
 				long_name = GER_reconquete_party_long
 				name = GER_reconquete_party
 			}
-			# Add Zemmour as the new neutrality (RECONQUETE)
-			# country leader. Done here at runtime — NOT pre-baked
-			# into common/characters — because giving Germany an
-			# extra country_leader at game start crashes HOI4's
-			# parallel day-1 leader caching pass.
 			add_country_leader_role = {
 				character = GER_eric_zemmour
 				promote_leader = yes
@@ -92,7 +100,6 @@ focus_tree = {
 			add_ideas = GER_reconquete_movement
 			set_country_flag = GER_reconquete_founded
 
-			# World news for the founding of RECONQUETE.
 			news_event = { id = ger_news.1 days = 0 }
 		}
 	}
@@ -103,7 +110,8 @@ focus_tree = {
 		relative_position_id = GER_a_new_hero
 		x = 0
 		y = 1
-		cost = 7  # ~50 days (HOI4 cost is in 7-day weeks; 7 * 7 = 49 days)
+		cost = 7
+		available_if_capitulated = no
 
 		prerequisite = { focus = GER_a_new_hero }
 
@@ -112,15 +120,1648 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 50
 
-			# 320-day temporary idea that gives -0.1 daily fascism
-			# drift and +0.1 daily neutrality (RECONQUETE) drift.
 			add_ideas = GER_zemmour_humiliation
-			# Schedule its removal exactly 320 days later via a
-			# hidden country event.
 			country_event = { id = ger_political.1 days = 320 }
 
-			# World news for the public humiliation of Hitler.
 			news_event = { id = ger_news.2 days = 0 }
 		}
 	}
+
+	#######################################
+	# A. MOVEMENT BUILDING
+	#######################################
+
+	focus = {
+		id = GER_zem_print_the_manifesto
+		icon = GFX_goal_generic_propaganda
+		x = 2
+		y = 3
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_epic_zemmour_anti_adolf_moment }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_political_power = 75
+			add_popularity = { ideology = neutrality popularity = 0.03 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_barroom_network
+		icon = GFX_goal_generic_political_pressure
+		x = 4
+		y = 3
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_epic_zemmour_anti_adolf_moment }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_ideas = GER_zem_barroom_network_idea
+			add_stability = -0.01
+		}
+	}
+
+	focus = {
+		id = GER_zem_mockery_as_weapon
+		icon = GFX_goal_generic_propaganda
+		x = 0
+		y = 4
+		cost = 5
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_print_the_manifesto }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_popularity = { ideology = fascism popularity = -0.02 }
+			add_popularity = { ideology = neutrality popularity = 0.02 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_organize_student_cells
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 3
+		y = 4
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_barroom_network }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.03
+			add_popularity = { ideology = neutrality popularity = 0.03 }
+			add_research_slot = 0
+			add_timed_idea = { idea = GER_zem_student_cells_idea days = 180 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_union_of_speakers
+		icon = GFX_goal_generic_political_pressure
+		x = 1
+		y = 5
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_mockery_as_weapon focus = GER_zem_organize_student_cells }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_political_power = 100
+			add_ideas = GER_zem_trained_street_orators
+		}
+	}
+
+	focus = {
+		id = GER_zem_newspapers_against_hysteria
+		icon = GFX_goal_generic_propaganda
+		x = 4
+		y = 5
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_organize_student_cells }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.05
+			add_timed_idea = { idea = GER_zem_friendly_press_idea days = 240 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_radio_argument_hour
+		icon = GFX_goal_generic_radar
+		x = 0
+		y = 6
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_union_of_speakers }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_timed_idea = { idea = GER_zem_radio_hour_idea days = 240 }
+			set_country_flag = GER_zem_unlocked_radio_decisions
+		}
+	}
+
+	focus = {
+		id = GER_zem_tailors_of_the_new_suit
+		icon = GFX_goal_generic_consumer_goods
+		x = 2
+		y = 6
+		cost = 5
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_union_of_speakers focus = GER_zem_newspapers_against_hysteria }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.02
+		}
+	}
+
+	focus = {
+		id = GER_zem_reconquete_youth_leagues
+		icon = GFX_goal_generic_political_pressure
+		x = 4
+		y = 6
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_newspapers_against_hysteria }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_manpower = 5000
+			add_popularity = { ideology = neutrality popularity = 0.02 }
+			add_stability = -0.01
+		}
+	}
+
+	focus = {
+		id = GER_zem_rally_in_berlin
+		icon = GFX_goal_generic_political_pressure
+		x = 1
+		y = 7
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_radio_argument_hour }
+		prerequisite = { focus = GER_zem_tailors_of_the_new_suit }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_popularity = { ideology = neutrality popularity = 0.05 }
+			news_event = { id = GER_zem_news.3 days = 0 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_the_slogan_machine
+		icon = GFX_goal_generic_propaganda
+		x = 3
+		y = 7
+		cost = 5
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_tailors_of_the_new_suit focus = GER_zem_reconquete_youth_leagues }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_political_power = 75
+			set_country_flag = GER_zem_unlocked_meme_posters
+		}
+	}
+
+	focus = {
+		id = GER_zem_local_chapters
+		icon = GFX_goal_generic_political_alignment
+		x = 0
+		y = 8
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_rally_in_berlin }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_popularity = { ideology = neutrality popularity = 0.02 }
+			add_ideas = GER_zem_local_chapters_idea
+			set_country_flag = GER_zem_local_chapters_open
+		}
+	}
+
+	focus = {
+		id = GER_zem_membership_books
+		icon = GFX_goal_generic_political_pressure
+		x = 2
+		y = 8
+		cost = 5
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_rally_in_berlin focus = GER_zem_the_slogan_machine }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.02
+		}
+	}
+
+	focus = {
+		id = GER_zem_the_bar_becomes_a_party
+		icon = GFX_goal_generic_political_pressure
+		x = 1
+		y = 9
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_local_chapters }
+		prerequisite = { focus = GER_zem_membership_books }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_popularity = { ideology = neutrality popularity = 0.04 }
+			swap_ideas = {
+				remove_idea = GER_reconquete_movement
+				add_idea = GER_zem_reconquete_rising
+			}
+		}
+	}
+
+	#######################################
+	# B. ANTI-HITLER POLITICAL OFFENSIVE
+	#######################################
+
+	focus = {
+		id = GER_zem_expose_the_screamers
+		icon = GFX_goal_generic_propaganda
+		x = 6
+		y = 3
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_epic_zemmour_anti_adolf_moment }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_popularity = { ideology = fascism popularity = -0.04 }
+			add_stability = 0.02
+			if = {
+				limit = { fascism < 0.30 }
+				news_event = { id = GER_zem_news.4 days = 5 }
+			}
+		}
+	}
+
+	focus = {
+		id = GER_zem_debate_the_brownshirts
+		icon = GFX_goal_generic_political_pressure
+		x = 5
+		y = 4
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_expose_the_screamers }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_popularity = { ideology = fascism popularity = -0.03 }
+			add_popularity = { ideology = neutrality popularity = 0.03 }
+			add_war_support = -0.02
+		}
+	}
+
+	focus = {
+		id = GER_zem_split_the_old_party
+		icon = GFX_goal_generic_political_pressure
+		x = 7
+		y = 4
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_expose_the_screamers }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_timed_idea = { idea = GER_zem_old_party_split_idea days = 240 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_parliament_of_insults
+		icon = GFX_goal_generic_propaganda
+		x = 5
+		y = 5
+		cost = 5
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_debate_the_brownshirts }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_political_power = 75
+			add_stability = -0.02
+			add_popularity = { ideology = neutrality popularity = 0.02 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_vote_of_no_confidence
+		icon = GFX_goal_generic_political_pressure
+		x = 7
+		y = 5
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_split_the_old_party }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_popularity = { ideology = fascism popularity = -0.05 }
+			news_event = { id = GER_zem_news.4 days = 0 }
+			country_event = { id = GER_zem_country.1 days = 7 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_the_empty_podium_trick
+		icon = GFX_goal_generic_propaganda
+		x = 5
+		y = 6
+		cost = 5
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_parliament_of_insults }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_popularity = { ideology = fascism popularity = -0.02 }
+			add_timed_idea = { idea = GER_zem_humiliated_propagandists days = 180 }
+			country_event = { id = GER_zem_country.3 days = 5 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_investigate_party_finances
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 7
+		y = 6
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_vote_of_no_confidence }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_political_power = 50
+			add_popularity = { ideology = fascism popularity = -0.03 }
+			set_country_flag = GER_zem_scandals_unlocked
+		}
+	}
+
+	focus = {
+		id = GER_zem_the_moustache_question
+		icon = GFX_goal_generic_propaganda
+		x = 5
+		y = 7
+		cost = 5
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_the_empty_podium_trick }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.01
+			add_timed_idea = { idea = GER_zem_moustache_pamphlet_idea days = 180 }
+			country_event = { id = GER_zem_country.11 days = 3 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_public_order_without_thugs
+		icon = GFX_goal_generic_political_pressure
+		x = 7
+		y = 7
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_investigate_party_finances }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.05
+			add_popularity = { ideology = fascism popularity = -0.02 }
+			add_ideas = GER_zem_public_order_without_thugs_idea
+		}
+	}
+
+	focus = {
+		id = GER_zem_the_trial_of_theatrics
+		icon = GFX_goal_generic_political_pressure
+		x = 5
+		y = 8
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_the_moustache_question }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_popularity = { ideology = fascism popularity = -0.04 }
+			country_event = { id = GER_zem_country.15 days = 0 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_isolate_hitler_loyalists
+		icon = GFX_goal_generic_political_pressure
+		x = 7
+		y = 8
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_public_order_without_thugs }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_timed_idea = { idea = GER_zem_isolate_loyalists_idea days = 180 }
+			add_stability = 0.03
+		}
+	}
+
+	#######################################
+	# C. RECONQUETE GOVERNMENT PATH
+	#######################################
+
+	focus = {
+		id = GER_zem_secure_the_chancellery
+		icon = GFX_goal_generic_political_pressure
+		x = 9
+		y = 10
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_the_bar_becomes_a_party focus = GER_zem_isolate_hitler_loyalists focus = GER_zem_the_grand_compromise focus = GER_zem_referendum_on_the_future }
+
+		available = {
+			OR = {
+				neutrality > 0.40
+				has_country_flag = GER_zem_referendum_won
+				has_country_flag = GER_zem_grand_compromise_signed
+			}
+		}
+
+		ai_will_do = { factor = 5 }
+
+		completion_reward = {
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+			}
+			add_political_power = 100
+			add_stability = 0.05
+			news_event = { id = GER_zem_news.5 days = 0 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_cabinet_of_reconquest
+		icon = GFX_goal_generic_political_pressure
+		x = 9
+		y = 11
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_secure_the_chancellery }
+
+		ai_will_do = { factor = 5 }
+
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.05
+			add_ideas = GER_zem_cabinet_of_reconquest
+		}
+	}
+
+	focus = {
+		id = GER_zem_ministry_of_argument
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 8
+		y = 12
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_cabinet_of_reconquest }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_research_slot = 0
+			add_stability = 0.02
+			add_timed_idea = { idea = GER_zem_ministry_of_argument_idea days = 365 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_reform_the_civil_service
+		icon = GFX_goal_generic_political_pressure
+		x = 10
+		y = 12
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_cabinet_of_reconquest }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.05
+			add_timed_idea = { idea = GER_zem_civil_service_reform_idea days = 365 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_reconquete_constitutional_act
+		icon = GFX_goal_generic_political_pressure
+		x = 8
+		y = 13
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_ministry_of_argument }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.07
+			set_country_flag = GER_zem_constitutional_act_passed
+		}
+	}
+
+	focus = {
+		id = GER_zem_party_above_the_meme
+		icon = GFX_goal_generic_political_pressure
+		x = 10
+		y = 13
+		cost = 5
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_reform_the_civil_service }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.03
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = GER_zem_restore_public_confidence
+		icon = GFX_goal_generic_political_pressure
+		x = 8
+		y = 14
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_reconquete_constitutional_act }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.10
+			add_war_support = -0.03
+		}
+	}
+
+	focus = {
+		id = GER_zem_clean_government_campaign
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 10
+		y = 14
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_party_above_the_meme }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_political_power = 75
+			add_stability = 0.03
+		}
+	}
+
+	focus = {
+		id = GER_zem_appoint_the_orators
+		icon = GFX_goal_generic_political_pressure
+		x = 8
+		y = 15
+		cost = 5
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_restore_public_confidence }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_ideas = GER_zem_orator_ministers_idea
+		}
+	}
+
+	focus = {
+		id = GER_zem_national_reconciliation_committees
+		icon = GFX_goal_generic_political_alignment
+		x = 10
+		y = 15
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_clean_government_campaign }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.05
+			add_popularity = { ideology = fascism popularity = -0.02 }
+			add_popularity = { ideology = communism popularity = -0.02 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_the_serious_man_doctrine
+		icon = GFX_goal_generic_political_pressure
+		x = 9
+		y = 16
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_appoint_the_orators }
+		prerequisite = { focus = GER_zem_national_reconciliation_committees }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.05
+			set_country_flag = GER_zem_capstones_unlocked
+		}
+	}
+
+	#######################################
+	# D. CONSERVATIVE COALITION PATH
+	#######################################
+
+	focus = {
+		id = GER_zem_court_the_conservatives
+		icon = GFX_goal_generic_political_pressure
+		x = 11
+		y = 3
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_epic_zemmour_anti_adolf_moment }
+		mutually_exclusive = { focus = GER_zem_radical_plebiscite }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.04
+			add_popularity = { ideology = neutrality popularity = 0.02 }
+			country_event = { id = GER_zem_country.4 days = 5 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_pact_with_industrialists
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 11
+		y = 4
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_court_the_conservatives }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_political_power = 75
+			add_stability = -0.01
+			add_timed_idea = { idea = GER_zem_industrial_pact_idea days = 365 }
+			country_event = { id = GER_zem_country.5 days = 5 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_churchill_not_called
+		icon = GFX_goal_generic_propaganda
+		x = 13
+		y = 4
+		cost = 5
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_court_the_conservatives }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_political_power = 25
+		}
+	}
+
+	focus = {
+		id = GER_zem_reassure_the_army
+		icon = GFX_goal_generic_position_armies
+		x = 12
+		y = 5
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_pact_with_industrialists focus = GER_zem_churchill_not_called }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			army_experience = 10
+			add_stability = 0.03
+			country_event = { id = GER_zem_country.6 days = 5 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_the_sober_uniform_policy
+		icon = GFX_goal_generic_political_pressure
+		x = 11
+		y = 6
+		cost = 5
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_reassure_the_army }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.02
+			add_popularity = { ideology = fascism popularity = -0.01 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_prussian_administrators
+		icon = GFX_goal_generic_political_pressure
+		x = 13
+		y = 6
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_reassure_the_army }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.03
+			add_timed_idea = { idea = GER_zem_prussian_admin_idea days = 365 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_monarchist_conversation
+		icon = GFX_goal_generic_political_alignment
+		x = 11
+		y = 7
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_the_sober_uniform_policy }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.02
+			country_event = { id = GER_zem_country.14 days = 5 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_bureaucrats_over_brawlers
+		icon = GFX_goal_generic_political_pressure
+		x = 13
+		y = 7
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_prussian_administrators }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.06
+			add_timed_idea = { idea = GER_zem_isolate_loyalists_idea days = 240 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_the_grand_compromise
+		icon = GFX_goal_generic_political_pressure
+		x = 12
+		y = 8
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_monarchist_conversation }
+		prerequisite = { focus = GER_zem_bureaucrats_over_brawlers }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.08
+			add_political_power = 100
+			add_ideas = GER_zem_grand_compromise_idea
+			set_country_flag = GER_zem_grand_compromise_signed
+		}
+	}
+
+	#######################################
+	# E. CONSTITUTIONAL / REFERENDUM PATH
+	#######################################
+
+	focus = {
+		id = GER_zem_radical_plebiscite
+		icon = GFX_goal_generic_political_pressure
+		x = 16
+		y = 3
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_epic_zemmour_anti_adolf_moment }
+		mutually_exclusive = { focus = GER_zem_court_the_conservatives }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_popularity = { ideology = neutrality popularity = 0.04 }
+			add_stability = -0.03
+			set_country_flag = GER_zem_referendum_unlocked
+		}
+	}
+
+	focus = {
+		id = GER_zem_campaign_trains
+		icon = GFX_goal_generic_propaganda
+		x = 15
+		y = 4
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_radical_plebiscite }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_timed_idea = { idea = GER_zem_campaign_trains_idea days = 180 }
+			add_political_power = -25
+		}
+	}
+
+	focus = {
+		id = GER_zem_ballots_not_brownshirts
+		icon = GFX_goal_generic_political_pressure
+		x = 17
+		y = 4
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_radical_plebiscite }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.05
+			add_popularity = { ideology = fascism popularity = -0.03 }
+			add_war_support = -0.02
+		}
+	}
+
+	focus = {
+		id = GER_zem_referendum_on_the_future
+		icon = GFX_goal_generic_political_pressure
+		x = 16
+		y = 5
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_campaign_trains }
+		prerequisite = { focus = GER_zem_ballots_not_brownshirts }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			country_event = { id = GER_zem_country.7 days = 0 }
+			country_event = { id = GER_zem_country.8 days = 30 }
+			news_event = { id = GER_zem_news.6 days = 0 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_constitutional_guardrails
+		icon = GFX_goal_generic_political_pressure
+		x = 16
+		y = 6
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_referendum_on_the_future }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.06
+			add_political_power = 75
+			add_ideas = GER_zem_constitutional_guardrails_idea
+		}
+	}
+
+	focus = {
+		id = GER_zem_the_republic_of_rebuttals
+		icon = GFX_goal_generic_political_pressure
+		x = 15
+		y = 7
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_constitutional_guardrails }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.03
+			add_timed_idea = { idea = GER_zem_republic_of_rebuttals_idea days = 365 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_majority_of_mockery
+		icon = GFX_goal_generic_propaganda
+		x = 17
+		y = 7
+		cost = 5
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_constitutional_guardrails }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_political_power = 100
+			add_popularity = { ideology = neutrality popularity = 0.02 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_legal_end_of_the_cult
+		icon = GFX_goal_generic_political_pressure
+		x = 16
+		y = 8
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_the_republic_of_rebuttals }
+		prerequisite = { focus = GER_zem_majority_of_mockery }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_popularity = { ideology = fascism popularity = -0.08 }
+			add_stability = 0.04
+			country_event = { id = GER_zem_country.15 days = 0 }
+		}
+	}
+
+	#######################################
+	# F. FOREIGN POLICY (peaceful, no France war)
+	#######################################
+
+	focus = {
+		id = GER_zem_european_conference_no_france_war
+		icon = GFX_goal_generic_alliance
+		x = 8
+		y = 17
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_the_serious_man_doctrine }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.02
+			add_opinion_modifier = { target = FRA modifier = GER_zem_peaceful_neighbor }
+			add_opinion_modifier = { target = ENG modifier = GER_zem_peaceful_neighbor }
+			add_opinion_modifier = { target = ITA modifier = GER_zem_peaceful_neighbor }
+			news_event = { id = GER_zem_news.7 days = 0 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_trade_over_tantrums
+		icon = GFX_goal_generic_consumer_goods
+		x = 10
+		y = 17
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_the_serious_man_doctrine }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_timed_idea = { idea = GER_zem_trade_over_tantrums_idea days = 365 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_non_aggression_in_the_west
+		icon = GFX_goal_generic_neutrality_focus
+		x = 8
+		y = 18
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_european_conference_no_france_war }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_opinion_modifier = { target = FRA modifier = GER_zem_non_aggression }
+			add_opinion_modifier = { target = ENG modifier = GER_zem_non_aggression }
+			add_opinion_modifier = { target = BEL modifier = GER_zem_non_aggression }
+			add_opinion_modifier = { target = HOL modifier = GER_zem_non_aggression }
+		}
+	}
+
+	focus = {
+		id = GER_zem_central_european_dialogue
+		icon = GFX_goal_generic_alliance
+		x = 10
+		y = 18
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_trade_over_tantrums }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_political_power = 50
+			add_opinion_modifier = { target = AUS modifier = GER_zem_peaceful_neighbor }
+			add_opinion_modifier = { target = CZE modifier = GER_zem_peaceful_neighbor }
+			add_opinion_modifier = { target = HUN modifier = GER_zem_peaceful_neighbor }
+			add_opinion_modifier = { target = POL modifier = GER_zem_peaceful_neighbor }
+		}
+	}
+
+	focus = {
+		id = GER_zem_anti_communist_argument_not_crusade
+		icon = GFX_goal_generic_propaganda
+		x = 9
+		y = 19
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_non_aggression_in_the_west }
+		prerequisite = { focus = GER_zem_central_european_dialogue }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.02
+			add_timed_idea = { idea = GER_zem_anti_communist_argument_idea days = 240 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_secure_the_borders_without_adventures
+		icon = GFX_goal_generic_construction
+		x = 7
+		y = 18
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_non_aggression_in_the_west }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.02
+			add_timed_idea = { idea = GER_zem_defensive_posture_idea days = 365 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_diplomats_with_punchlines
+		icon = GFX_goal_generic_political_pressure
+		x = 11
+		y = 18
+		cost = 5
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_central_european_dialogue }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_political_power = 25
+			country_event = { id = GER_zem_country.16 days = 5 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_radio_to_the_world
+		icon = GFX_goal_generic_radar
+		x = 9
+		y = 20
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_anti_communist_argument_not_crusade }
+		prerequisite = { focus = GER_zem_diplomats_with_punchlines }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.03
+			country_event = { id = GER_zem_country.17 days = 0 }
+		}
+	}
+
+	#######################################
+	# G. INTERNAL REFORM
+	#######################################
+
+	focus = {
+		id = GER_zem_internal_security_review
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 1
+		y = 11
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_the_bar_becomes_a_party focus = GER_zem_isolate_hitler_loyalists }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.04
+			set_country_flag = GER_zem_security_review_done
+		}
+	}
+
+	focus = {
+		id = GER_zem_ban_private_armies
+		icon = GFX_goal_generic_political_pressure
+		x = 3
+		y = 11
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_internal_security_review }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.06
+			add_popularity = { ideology = fascism popularity = -0.04 }
+			add_war_support = -0.03
+		}
+	}
+
+	focus = {
+		id = GER_zem_civic_discipline_campaign
+		icon = GFX_goal_generic_political_pressure
+		x = 5
+		y = 11
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_internal_security_review }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.05
+			add_timed_idea = { idea = GER_zem_civic_discipline_idea days = 365 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_restore_local_elections
+		icon = GFX_goal_generic_political_pressure
+		x = 1
+		y = 12
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_ban_private_armies }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.05
+			add_popularity = { ideology = neutrality popularity = 0.02 }
+			country_event = { id = GER_zem_country.13 days = 5 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_party_finance_law
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 3
+		y = 12
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_ban_private_armies focus = GER_zem_civic_discipline_campaign }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.03
+		}
+	}
+
+	focus = {
+		id = GER_zem_courts_against_cults
+		icon = GFX_goal_generic_political_pressure
+		x = 5
+		y = 12
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_civic_discipline_campaign }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.04
+			add_timed_idea = { idea = GER_zem_courts_against_cults_idea days = 240 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_reeducate_the_propagandists
+		icon = GFX_goal_generic_propaganda
+		x = 1
+		y = 13
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_restore_local_elections }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_popularity = { ideology = fascism popularity = -0.02 }
+			add_timed_idea = { idea = GER_zem_humiliated_propagandists days = 240 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_audit_the_rallies
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 3
+		y = 13
+		cost = 5
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_party_finance_law }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_political_power = 75
+			add_popularity = { ideology = fascism popularity = -0.01 }
+			country_event = { id = GER_zem_country.12 days = 5 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_public_broadcasting_charter
+		icon = GFX_goal_generic_radar
+		x = 5
+		y = 13
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_courts_against_cults }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.03
+			add_ideas = GER_zem_public_broadcasting_charter_idea
+		}
+	}
+
+	focus = {
+		id = GER_zem_the_new_civic_calendar
+		icon = GFX_goal_generic_political_pressure
+		x = 3
+		y = 14
+		cost = 5
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_reeducate_the_propagandists }
+		prerequisite = { focus = GER_zem_audit_the_rallies }
+		prerequisite = { focus = GER_zem_public_broadcasting_charter }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.02
+		}
+	}
+
+	#######################################
+	# H. DOMESTIC POLICY
+	#######################################
+
+	focus = {
+		id = GER_zem_economic_seriousness
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 14
+		y = 11
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_the_grand_compromise focus = GER_zem_legal_end_of_the_cult }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_timed_idea = { idea = GER_zem_economic_seriousness_idea days = 365 }
+			add_stability = 0.02
+		}
+	}
+
+	focus = {
+		id = GER_zem_workers_who_argue_back
+		icon = GFX_goal_generic_political_pressure
+		x = 13
+		y = 12
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_economic_seriousness }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.03
+			add_popularity = { ideology = communism popularity = -0.01 }
+			add_timed_idea = { idea = GER_zem_workers_argue_back_idea days = 240 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_small_business_reconquest
+		icon = GFX_goal_generic_consumer_goods
+		x = 15
+		y = 12
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_economic_seriousness }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_political_power = 50
+			add_timed_idea = { idea = GER_zem_small_business_idea days = 240 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_housing_without_hysteria
+		icon = GFX_goal_generic_construction
+		x = 13
+		y = 13
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_workers_who_argue_back }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.04
+			add_timed_idea = { idea = GER_zem_housing_idea days = 240 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_culture_of_debate
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 15
+		y = 13
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_small_business_reconquest }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.02
+			add_timed_idea = { idea = GER_zem_culture_of_debate_idea days = 365 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_national_style_commission
+		icon = GFX_goal_generic_propaganda
+		x = 13
+		y = 14
+		cost = 5
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_housing_without_hysteria }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_political_power = 25
+			add_stability = 0.01
+		}
+	}
+
+	focus = {
+		id = GER_zem_reconquete_social_contract
+		icon = GFX_goal_generic_political_pressure
+		x = 15
+		y = 14
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_culture_of_debate }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.06
+			add_popularity = { ideology = neutrality popularity = 0.02 }
+		}
+	}
+
+	#######################################
+	# I. CAPSTONES
+	#######################################
+
+	focus = {
+		id = GER_zem_the_second_tavern_speech
+		icon = GFX_goal_generic_propaganda
+		x = 7
+		y = 21
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_radio_to_the_world }
+		available = { has_country_flag = GER_zem_capstones_unlocked }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 150
+			country_event = { id = GER_zem_country.10 days = 0 }
+			news_event = { id = GER_zem_news.8 days = 5 }
+		}
+	}
+
+	focus = {
+		id = GER_zem_reconquete_majority
+		icon = GFX_goal_generic_political_pressure
+		x = 9
+		y = 21
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_radio_to_the_world }
+		available = {
+			has_country_flag = GER_zem_capstones_unlocked
+			OR = {
+				neutrality > 0.50
+				has_government = neutrality
+			}
+		}
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.08
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = GER_zem_end_the_hitler_question
+		icon = GFX_goal_generic_political_pressure
+		x = 7
+		y = 22
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_the_second_tavern_speech }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_popularity = { ideology = fascism popularity = -0.10 }
+			if = {
+				limit = { has_idea = GER_zemmour_humiliation }
+				remove_ideas = GER_zemmour_humiliation
+			}
+		}
+	}
+
+	focus = {
+		id = GER_zem_the_zemmourist_state
+		icon = GFX_goal_generic_political_pressure
+		x = 9
+		y = 22
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_reconquete_majority }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_ideas = GER_zem_zemmourist_state
+			add_political_power = 100
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_zem_europe_without_tantrums
+		icon = GFX_goal_generic_alliance
+		x = 12
+		y = 21
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_radio_to_the_world }
+		prerequisite = { focus = GER_zem_reconquete_social_contract }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.03
+			add_opinion_modifier = { target = FRA modifier = GER_zem_peaceful_neighbor }
+			add_opinion_modifier = { target = ENG modifier = GER_zem_peaceful_neighbor }
+			add_opinion_modifier = { target = ITA modifier = GER_zem_peaceful_neighbor }
+			add_opinion_modifier = { target = POL modifier = GER_zem_peaceful_neighbor }
+		}
+	}
+
+	focus = {
+		id = GER_zem_the_final_rebuttal
+		icon = GFX_goal_generic_propaganda
+		x = 9
+		y = 23
+		cost = 10
+		available_if_capitulated = no
+
+		prerequisite = { focus = GER_zem_end_the_hitler_question }
+		prerequisite = { focus = GER_zem_the_zemmourist_state }
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			add_stability = 0.10
+			add_political_power = 200
+			if = {
+				limit = { has_idea = GER_zemmour_humiliation }
+				remove_ideas = GER_zemmour_humiliation
+			}
+			news_event = { id = GER_zem_news.9 days = 0 }
+		}
+	}
+
 }
